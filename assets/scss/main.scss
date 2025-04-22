@@ -1,0 +1,28 @@
+@forward "./_reset";
+// Переменные для удобства
+$font-heading: "Bad Script", cursive;
+$font-text: "Montserrat", sans-serif;
+
+body {
+  background-color: #295240;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+  font-weight: 400; // Bad Script имеет только Regular
+  color: $text-color;
+}
+
+body,
+p,
+a {
+  font-family: $font-text;
+  font-weight: 300; // Легкий Montserrat для основного текста
+  color: $text-color;
+}
+
+strong {
+  font-weight: 400; // Обычный Montserrat для акцентов
+}
