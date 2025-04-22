@@ -1,6 +1,7 @@
 <template>
   <We/>
   <Calendar/>
+  <Place/>
 </template>
 
 <script setup></script>
