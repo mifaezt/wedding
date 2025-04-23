@@ -34,11 +34,18 @@
             </div>
         </div>
         <NuxtImg 
-        :class="$style.drawing" 
+        :class="$style.drawingLeft" 
         src="lineDrawing.png" 
         alt="Декоративный элемент"
         loading="lazy"
-        :style="drawingStyle"
+
+      />
+      <NuxtImg 
+        :class="$style.drawingRight" 
+        src="lineDrawing.png" 
+        alt="Декоративный элемент"
+        loading="lazy"
+
       />
     </div>
 </template>
@@ -55,6 +62,7 @@
     @include center;
     margin: 60px 0;
     padding: 0 10px;
+    position: relative;
     // z-index: 2;
 }
 
@@ -90,16 +98,16 @@
     // position: relative;
     display: inline-block;
     
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.5);
-    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     bottom: -10px;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     width: 60px;
+    //     height: 2px;
+    //     background: rgba(255, 255, 255, 0.5);
+    // }
 }
 
 .logoWrapper {
@@ -184,17 +192,17 @@
         }
     }
     
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
+    //     transform: translateX(-100%);
+    //     transition: transform 0.3s ease;
+    // }
 }
 
 .arrowIcon {
@@ -205,4 +213,16 @@
 }
 
 
+.drawingRight {
+    position: absolute;
+    width: 50%;
+    transform: scaleX(-1) scaleY(-1);
+
+}
+
+.drawingLeft {
+    position: absolute;
+    width: 50%;
+    transform: scaleY(-1);
+}
 </style>
