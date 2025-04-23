@@ -33,13 +33,6 @@
                 </NuxtLink>
             </div>
         </div>
-        <NuxtImg 
-        :class="$style.drawing" 
-        src="lineDrawing.png" 
-        alt="Декоративный элемент"
-        loading="lazy"
-        :style="drawingStyle"
-      />
     </div>
 </template>
 

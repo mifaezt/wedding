@@ -1,7 +1,7 @@
 @forward "./_reset";
 // Переменные для удобства
-$font-heading: "Bad Script", cursive;
-$font-text: "Montserrat", sans-serif;
+$font-heading: "Bad Script";
+$font-text: "Comfortaa", sans-serif;
 
 body {
   background-color: $primary-color;
@@ -13,16 +13,17 @@ h3 {
   font-family: $font-heading;
   font-weight: 400; // Bad Script имеет только Regular
   color: $text-color;
+  text-shadow: 1px 1px 2px black;
 }
 
 body,
 p,
 a {
   font-family: $font-text;
-  font-weight: 300; // Легкий Montserrat для основного текста
+  font-weight: 300; // Легкий для основного текста
   color: $text-color;
 }
 
 strong {
-  font-weight: 400; // Обычный Montserrat для акцентов
+  font-weight: 400; // Обычный для акцентов
 }

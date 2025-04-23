@@ -1,33 +1,46 @@
 <template>
+  <div :class="$style.calendarWrapper">
     <div :class="$style.calendarContainer">
-        <NuxtImg :class="$style.calendar" src="calendar.png" />
-        <NuxtImg :class="$style.drawning" src="lineDrawing.png" />
+      <div :class="$style.calendarImageWrapper">
+        <NuxtImg 
+          :class="$style.calendar" 
+          src="calendars.svg" 
+          alt="Дата свадьбы"
+          loading="lazy"
+        />
+      </div>
     </div>
-    
+  </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  // Логика компонента без анимации
+}
+</script>
 
-<style style module lang="scss">
-.calendar {
-    
+<style module lang="scss">
+.calendarWrapper {
+  position: relative;
+  padding: 20px;
 }
 
 .calendarContainer {
-    @include center;
-    position: relative;
-    height: 260px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-
-.drawning {
-    position: absolute;
-    // transform: rotateY(180deg);
-    bottom: -25%;
-    right: 0;
-    transform: scaleX(-1)  rotate(30deg);
-    width: 40%;
-    
+.calendarImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
+.calendar {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 </style>

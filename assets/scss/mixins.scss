@@ -10,6 +10,12 @@
       @content;
     }
   }
+
+  @if $breakpoint == mobile {
+    @media (min-width: 425px) {
+      @content;
+    }
+  }
 }
 
 // Плавные анимации
@@ -36,5 +42,5 @@
 // .weMain {
 //   @include center-absolute();
 // }
-
+// для миксина в элементе
 // @include respond(desktop) {}
