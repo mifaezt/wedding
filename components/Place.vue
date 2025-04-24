@@ -34,40 +34,73 @@
             </div>
         </div>
         <NuxtImg 
-        :class="$style.drawingLeft" 
-        src="lineDrawing.png" 
-        alt="Декоративный элемент"
-        loading="lazy"
-
-      />
-      <NuxtImg 
-        :class="$style.drawingRight" 
-        src="lineDrawing.png" 
-        alt="Декоративный элемент"
-        loading="lazy"
-
-      />
+          :class="$style.drawingLeft" 
+          src="lineDrawing.png" 
+          alt="Декоративный элемент"
+          loading="lazy"
+          :style="drawingLeftStyle"
+        />
+        <NuxtImg 
+          :class="$style.drawingRight" 
+          src="lineDrawing.png" 
+          alt="Декоративный элемент"
+          loading="lazy"
+          :style="drawingRightStyle"
+        />
     </div>
 </template>
 
 <script setup>
-// Можно добавить логику при необходимости
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const scrollY = ref(0);
+
+// Начальные значения из CSS
+const initialLeftRotation = 0; // градусов
+const initialRightRotation = 0; // градусов
+
+const drawingLeftStyle = ref({ 
+  transform: `scaleY(-1) rotate(${initialLeftRotation}deg)` 
+});
+
+const drawingRightStyle = ref({ 
+  transform: `scaleX(-1) scaleY(-1) rotate(${initialRightRotation}deg)` 
+});
+
+const handleScroll = () => {
+  scrollY.value = window.scrollY;
+  const rotationFactor = scrollY.value * 0.05; // Коэффициент скорости вращения
+  
+  // Left - вращение против часовой (угол увеличивается)
+  drawingLeftStyle.value = {
+    transform: `scaleY(-1) rotate(${initialLeftRotation + rotationFactor}deg)`
+  };
+  
+  // Right - вращение по часовой (угол уменьшается)
+  drawingRightStyle.value = {
+    transform: `scaleX(-1) scaleY(-1) rotate(${initialRightRotation + rotationFactor}deg)`
+  };
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Инициализация начального положения
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style module lang="scss">
-// @use "@/assets/scss/mixins" as *;
-// @use "@/assets/scss/variables" as *;
-
 .placeMainContainer {
     @include center;
     margin: 60px 0;
     padding: 0 10px;
     position: relative;
-    // z-index: 2;
 }
 
 .placeContainer {
-    // position: relative;
     width: 100%;
     max-width: 800px;
     border-radius: 16px;
@@ -83,7 +116,6 @@
 }
 
 .contentWrapper {
-    // position: relative;
     padding: 20px 20px 20px;
     text-align: center;
     color: $text-color;
@@ -91,27 +123,13 @@
 
 .title {
     font-size: 2.2rem;
-    // margin-bottom: 20px;
     font-weight: 400;
     letter-spacing: 1px;
     color: white;
-    // position: relative;
     display: inline-block;
-    
-    // &::after {
-    //     content: '';
-    //     position: absolute;
-    //     bottom: -10px;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     width: 60px;
-    //     height: 2px;
-    //     background: rgba(255, 255, 255, 0.5);
-    // }
 }
 
 .logoWrapper {
-    // margin: 20px 0;
     transition: transform 0.3s ease;
     
     &:hover {
@@ -134,7 +152,6 @@
 }
 
 .imageWrapper {
-    // position: relative;
     width: 100%;
     height: 250px;
     border-radius: 8px;
@@ -155,7 +172,6 @@
 }
 
 .imageOverlay {
-    // position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -183,26 +199,10 @@
         transform: translateY(-3px);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         
-        &::after {
-            transform: translateX(0);
-        }
-        
         .arrowIcon {
             transform: translateX(3px);
         }
     }
-    
-    // &::after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
-    //     transform: translateX(-100%);
-    //     transition: transform 0.3s ease;
-    // }
 }
 
 .arrowIcon {
@@ -212,17 +212,23 @@
     transition: transform 0.3s ease;
 }
 
-
 .drawingRight {
     position: absolute;
     width: 50%;
-    transform: scaleX(-1) scaleY(-1);
-
+    top: -15%;
+    right: -10%;
+    transform: scaleX(-1) scaleY(-1) rotate(35deg); /* Начальное положение */
+    will-change: transform;
+    transition: transform 0.3s ease;
 }
 
 .drawingLeft {
     position: absolute;
     width: 50%;
-    transform: scaleY(-1);
+    top: -15%;
+    left: -10%;
+    transform: scaleY(-1) rotate(40deg); /* Начальное положение */
+    will-change: transform;
+    transition: transform 0.3s ease;
 }
 </style>
