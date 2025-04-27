@@ -2,7 +2,7 @@
     <h1 :class="$style.mainTitle">Wedding day</h1>
     <div :class="$style.weMain" ref="weMain">
       <div :class="$style.imgContainer">
-        <NuxtImg :class="$style.weImg" src="WeCut.jpg" />
+        <NuxtImg :class="$style.weImg" src="We.jpg" />
       </div>
       <NuxtImg 
         :class="$style.imgMainPlants" 
@@ -138,8 +138,8 @@
   }
   
   .names {
-    margin-top: 20px;
-    font-size: 28px;
+    // margin-top: 20px;
+    font-size: 30px;
     line-height: 1.4em;
     text-align: center;
 
@@ -158,7 +158,7 @@
     font-weight: 200;
     font-size: 18px;
     text-align: center;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     
     @include respond(tablet) {
       font-size: 20px;
@@ -169,6 +169,10 @@
     padding: 10px 20px;
     text-align: center;
     font-size: 16px;
+    text-shadow: 1px 1px 2px black;
+    background-color: rgba(0, 51, 7, 0.342);
+    border-radius: 16px;
+
     
     @include respond(mobile) {
       padding: 10px 30px;
@@ -187,7 +191,7 @@
   
   .ornamentCenter {
     width: 50%;
-    margin: 20px auto;
+    // margin: 20px auto;
     display: block;
     
     @include respond(mobile) {

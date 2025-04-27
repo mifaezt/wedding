@@ -5,6 +5,9 @@ $font-text: "Comfortaa", sans-serif;
 
 body {
   background-color: $primary-color;
+  background-image: url(../images/pastel.jpg);
+  background-size: contain; /* Показывает всё изображение без обрезки */
+  // background-position: center; /* Центрирует */
 }
 
 h1,

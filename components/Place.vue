@@ -26,10 +26,10 @@
                     to="https://yandex.ru/maps/-/CHfaqTZF"
                     aria-label="Перейти к карте"
                 >
-                    <span>В путь</span>
-                    <svg :class="$style.arrowIcon" viewBox="0 0 24 24" fill="none">
+                    <span>На карте</span>
+                    <!-- <svg :class="$style.arrowIcon" viewBox="0 0 24 24" fill="none">
                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    </svg> -->
                 </NuxtLink>
             </div>
         </div>
@@ -46,6 +46,12 @@
           alt="Декоративный элемент"
           loading="lazy"
           :style="drawingRightStyle"
+        />
+        <NuxtImg 
+          :class="$style.infinity" 
+          src="infitity.svg" 
+          alt="Декоративный элемент"
+          
         />
     </div>
 </template>
@@ -95,9 +101,10 @@ onUnmounted(() => {
 <style module lang="scss">
 .placeMainContainer {
     @include center;
-    margin: 60px 0;
+    margin: 30px 30px;
     padding: 0 10px;
     position: relative;
+    
 }
 
 .placeContainer {
@@ -105,9 +112,11 @@ onUnmounted(() => {
     max-width: 800px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: $secondary-color;
+    // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    // background-color: $secondary-color;
+    background-color: rgba(0, 51, 7, 0.342);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
     
     &:hover {
         transform: translateY(-5px);
@@ -125,8 +134,14 @@ onUnmounted(() => {
     font-size: 2.2rem;
     font-weight: 400;
     letter-spacing: 1px;
+    line-height: normal;
     color: white;
     display: inline-block;
+}
+
+.infinity {
+    margin: 20px 0px;
+    width: 60%;
 }
 
 .logoWrapper {
@@ -145,10 +160,10 @@ onUnmounted(() => {
 }
 
 .address {
-    font-size: 1.1rem;
+    // font-size: 1.1rem;
     margin: 10px 0 10px;
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    // line-height: 1.6;
 }
 
 .imageWrapper {
@@ -156,7 +171,7 @@ onUnmounted(() => {
     height: 250px;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -183,12 +198,14 @@ onUnmounted(() => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 28px;
-    border-radius: 30px;
-    background-color: white;
-    color: $secondary-color;
+    padding: 12px 12px;
+    border-radius: 20px;
+    border: 1px solid white;
+    // background-color: white;
+    color: $text-color;
     font-size: 1rem;
-    font-weight: 500;
+    font-family: Comfortaa;
+    font-weight: 400; // Легкий для основного текста
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -215,7 +232,7 @@ onUnmounted(() => {
 .drawingRight {
     position: absolute;
     width: 50%;
-    top: -15%;
+    top: -10%;
     right: -10%;
     transform: scaleX(-1) scaleY(-1) rotate(35deg); /* Начальное положение */
     will-change: transform;
@@ -225,7 +242,7 @@ onUnmounted(() => {
 .drawingLeft {
     position: absolute;
     width: 50%;
-    top: -15%;
+    top: -10%;
     left: -10%;
     transform: scaleY(-1) rotate(40deg); /* Начальное положение */
     will-change: transform;

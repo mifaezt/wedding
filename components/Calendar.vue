@@ -4,7 +4,7 @@
       <div :class="$style.calendarImageWrapper">
         <NuxtImg 
           :class="$style.calendar" 
-          src="calendars.svg" 
+          src="calendar.svg" 
           alt="Дата свадьбы"
           loading="lazy"
         />
@@ -22,7 +22,9 @@ export default {
 <style module lang="scss">
 .calendarWrapper {
   position: relative;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
+  // background-color: rgba(0, 51, 7, 0.103);
+  // border-radius: 16px;
 }
 
 .calendarContainer {

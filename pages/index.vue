@@ -3,6 +3,7 @@
     <We/>
     <Calendar/>
     <Place/>
+    <Program />
   </div>
 </template>
 
