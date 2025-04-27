@@ -1,7 +1,7 @@
 
 <template>
 
-    <h2 class="programTitle">Программа</h2>
+    <h2 :class="$style.programTitle">Программа</h2>
     <div class="program__items">
       <div v-for="(item, index) in items" :key="index" class="program__item">
         
@@ -27,6 +27,8 @@ const items = [
 
 
 .programTitle {
+  font-size: 40px;
+  margin-right: 10%;
   text-align: end;
   margin-bottom: 30px;
 

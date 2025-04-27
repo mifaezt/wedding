@@ -125,7 +125,7 @@
   
   .mainTitle {
     @include center;
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 10px;
     
     @include respond(mobile) {
