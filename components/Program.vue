@@ -1,16 +1,20 @@
-
 <template>
-
+  <div :class="$style.programContainer">
     <h2 :class="$style.programTitle">Программа</h2>
-    <div class="program__items">
-      <div v-for="(item, index) in items" :key="index" class="program__item">
-        
-        <div class="program__time">{{ item.time }}</div>
-        <div class="program__event">{{ item.event }}</div>
-      
+    <div :class="$style.programContainerInner">
+      <div :class="$style.timeColumn">
+        <div v-for="(item, index) in items" :key="'time-'+index" :class="$style.programRow">
+          <div :class="$style.programTime">{{ item.time }}</div>
+        </div>
+      </div>
+      <div :class="$style.verticalDivider"></div>
+      <div :class="$style.eventColumn">
+        <div v-for="(item, index) in items" :key="'event-'+index" :class="$style.programRow">
+          <div :class="$style.programEvent">{{ item.event }}</div>
+        </div>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script setup>
@@ -24,80 +28,69 @@ const items = [
 </script>
 
 <style module lang="scss">
-
+.programContainer {
+  margin: 10px 8px 30px 6px;
+}
 
 .programTitle {
   font-size: 40px;
+  text-align: right;
   margin-right: 10%;
-  text-align: end;
-  margin-bottom: 30px;
-
+  color: white;
 }
 
-.program__items {
-  display: flex;
-
-  gap: 20px;
+.programContainerInner {
+  display: grid;
+  grid-template-columns: auto 2px 1fr;
+  width: 100%;
+  color: white;
 }
 
-.program__item {
+.timeColumn, .eventColumn {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(40px, auto));
+  align-items: center;
+}
+
+.programRow {
+  min-height: 40px;
   display: flex;
   align-items: center;
-  position: relative; /* Для позиционирования псевдоэлемента */
-  padding-left: 70px; /* Отступ для времени */
 }
 
-.program__time {
-  font-weight: bold;
-  font-size: 18px;
-  width: 60px;
-  color: #555;
-  position: absolute;
-  left: 0;
+.timeColumn {
+  .programRow {
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
 }
 
-.program__event {
-  font-size: 16px;
-  color: #333;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed #ccc;
-  position: relative;
-  padding-left: 20px; /* Отступ от линии */
-  flex-grow: 1;
+.eventColumn {
+  .programRow {
+    padding-left: 20px;
+  }
 }
 
-/* Вертикальная разделительная линия */
-.program__event::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: #ccc;
+.verticalDivider {
+  background-color: white;
+  margin: 5px 0;
 }
 
-@media (max-width: 480px) {
-  .program__item {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 0;
-    gap: 5px;
-  }
-  
-  .program__time {
-    position: static;
-    margin-bottom: 5px;
-  }
-  
-  .program__event {
-    padding-left: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  
-  .program__event::before {
-    display: none; /* Скрываем линию на мобильных */
-  }
+.programTime {
+  font-size: 24px; /* Увеличили размер шрифта */
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  align-items: center; /* Добавили для вертикального выравнивания */
+  height: 100%; /* Занимает всю высоту строки */
+}
+
+.programEvent {
+  font-size: 20px;
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  align-items: center; /* Добавили для вертикального выравнивания */
+  height: 100%; /* Занимает всю высоту строки */
 }
 </style>

@@ -4,6 +4,10 @@
     <Calendar/>
     <Place/>
     <Program />
+    <Dress />
+    <Moments />
+    <Contacts />
+    <End />
   </div>
 </template>
 

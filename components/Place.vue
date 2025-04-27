@@ -47,12 +47,7 @@
           loading="lazy"
           :style="drawingRightStyle"
         />
-        <NuxtImg 
-          :class="$style.infinity" 
-          src="infitity.svg" 
-          alt="Декоративный элемент"
-          
-        />
+
     </div>
 </template>
 
@@ -101,7 +96,7 @@ onUnmounted(() => {
 <style module lang="scss">
 .placeMainContainer {
     @include center;
-    margin: 30px 30px;
+    margin: 10px 10px 30px 10px;
     padding: 0 10px;
     position: relative;
     
@@ -126,23 +121,20 @@ onUnmounted(() => {
 
 .contentWrapper {
     padding: 20px 20px 20px;
+
     text-align: center;
     color: $text-color;
 }
 
 .title {
-    font-size: 2.2rem;
+    font-size: 45px;
     font-weight: 400;
     letter-spacing: 1px;
-    line-height: normal;
+    line-height: 120%;
     color: white;
     display: inline-block;
 }
 
-.infinity {
-    margin: 20px 0px;
-    width: 60%;
-}
 
 .logoWrapper {
     transition: transform 0.3s ease;
@@ -160,8 +152,8 @@ onUnmounted(() => {
 }
 
 .address {
-    // font-size: 1.1rem;
-    margin: 10px 0 10px;
+    font-size: 12px;
+    margin: 0px 0px 10px;
     color: rgba(255, 255, 255, 0.9);
     // line-height: 1.6;
 }
@@ -198,14 +190,14 @@ onUnmounted(() => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 12px;
+    padding: 12px 20px;
     border-radius: 20px;
-    border: 1px solid white;
+    border: 2px solid white;
     // background-color: white;
     color: $text-color;
-    font-size: 1rem;
+    font-size: 20px;
     font-family: Comfortaa;
-    font-weight: 400; // Легкий для основного текста
+    font-weight: 300; // Легкий для основного текста
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -231,9 +223,9 @@ onUnmounted(() => {
 
 .drawingRight {
     position: absolute;
-    width: 50%;
-    top: -10%;
-    right: -10%;
+    width: 40%;
+    top: -15%;
+    right: -5%;
     transform: scaleX(-1) scaleY(-1) rotate(35deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
@@ -241,9 +233,9 @@ onUnmounted(() => {
 
 .drawingLeft {
     position: absolute;
-    width: 50%;
-    top: -10%;
-    left: -10%;
+    width: 40%;
+    top: -15%;
+    left: -5%;
     transform: scaleY(-1) rotate(40deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;

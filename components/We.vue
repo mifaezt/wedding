@@ -35,7 +35,7 @@
         Приглашаем вас на нашу свадьбу! <br>
         Мы хотим разделить этот важный день нашей жизни с вами - самыми близкими и родными людьми. 
       </p>
-      <NuxtImg :class="$style.ornamentCenter" src="divider.svg" />
+      <NuxtImg :class="$style.ornamentCenter" src="infitity.svg" />
     </div>
   </template>
   
@@ -97,7 +97,7 @@
   .weMain {
     @include center;
     position: relative;
-    padding: 0px 30px;
+    padding: 0px 10px;
     
     @include respond(tablet) {
       padding: 40px 0;
@@ -129,7 +129,7 @@
     margin-bottom: 10px;
     
     @include respond(mobile) {
-      font-size: 35px;
+      font-size: 60px;
     }
     
     @include respond(tablet) {
@@ -139,13 +139,13 @@
   
   .names {
     // margin-top: 20px;
-    font-size: 30px;
+    font-size: 40px;
     line-height: 1.4em;
     text-align: center;
 
     
     @include respond(mobile) {
-      font-size: 32px;
+      font-size: 40px;
     }
     
     @include respond(tablet) {
@@ -156,7 +156,7 @@
   .date {
     font-family: $font-main;
     font-weight: 200;
-    font-size: 18px;
+    font-size: 30px;
     text-align: center;
     // margin-bottom: 20px;
     
@@ -168,7 +168,7 @@
   .letter {
     padding: 10px 20px;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     text-shadow: 1px 1px 2px black;
     background-color: rgba(0, 51, 7, 0.342);
     border-radius: 16px;
@@ -176,7 +176,7 @@
     
     @include respond(mobile) {
       padding: 10px 30px;
-      font-size: 17px;
+      font-size: 20px;
     }
     
     @include respond(tablet) {
@@ -191,7 +191,7 @@
   
   .ornamentCenter {
     width: 50%;
-    // margin: 20px auto;
+    margin: 20px auto;
     display: block;
     
     @include respond(mobile) {
