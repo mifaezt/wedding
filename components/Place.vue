@@ -57,8 +57,8 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const scrollY = ref(0);
 
 // Начальные значения из CSS
-const initialLeftRotation = 0; // градусов
-const initialRightRotation = 0; // градусов
+const initialLeftRotation = 30; // градусов
+const initialRightRotation = 30; // градусов
 
 const drawingLeftStyle = ref({ 
   transform: `scaleY(-1) rotate(${initialLeftRotation}deg)` 
@@ -70,7 +70,7 @@ const drawingRightStyle = ref({
 
 const handleScroll = () => {
   scrollY.value = window.scrollY;
-  const rotationFactor = scrollY.value * 0.05; // Коэффициент скорости вращения
+  const rotationFactor = scrollY.value * 0.03; // Коэффициент скорости вращения
   
   // Left - вращение против часовой (угол увеличивается)
   drawingLeftStyle.value = {
@@ -224,7 +224,7 @@ onUnmounted(() => {
 
 .drawingRight {
     position: absolute;
-    width: 40%;
+    width: 180px;
     top: -15%;
     right: -5%;
     transform: scaleX(-1) scaleY(-1) rotate(35deg); /* Начальное положение */
@@ -234,7 +234,7 @@ onUnmounted(() => {
 
 .drawingLeft {
     position: absolute;
-    width: 40%;
+    width: 180px;
     top: -15%;
     left: -5%;
     transform: scaleY(-1) rotate(40deg); /* Начальное положение */

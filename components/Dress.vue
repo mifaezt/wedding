@@ -72,9 +72,9 @@ onUnmounted(() => {
 
 .drawingDress {
   position: absolute;
-    width: 90%;
-    top: 25%;
-    right: -10%;
+    width: 350px;
+    top: 50px;
+    right: -50px;
     transform: scaleX(-1) scaleY(-1) rotate(-20deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;

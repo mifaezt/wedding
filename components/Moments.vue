@@ -124,9 +124,9 @@
 
 .drawingRight {
     position: absolute;
-    width: 55%;
-    top: -15%;
-    right: -15%;
+    width: 200px;
+    top: -20px;
+    right: -60px;
     transform: scaleX(-1) scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
@@ -134,19 +134,19 @@
 
 .drawingLeft {
     position: absolute;
-    width: 45%;
-    top: -15%;
-    left: -10%;
-    transform: scaleY(-1) rotate(40deg); /* Начальное положение */
+    width: 170px;
+    top: 0;
+    left: -70px;
+    transform: scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
 }
 
 .drawingLeftSecond {
     position: absolute;
-    width: 65%;
-    top: -30%;
-    left: -20%;
+    width: 250px;
+    top: -50px;
+    left: -30px;
     transform: scaleY(-1) rotate(60deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;

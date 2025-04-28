@@ -28,12 +28,10 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const container = ref(null)
 const flowerTopStyle = ref({
-  transform: 'translateX(100%) rotate(90deg) scaleY(-1) scaleX(1) ',
-  // opacity: 0
+  transform: 'translateX(-100%) rotate(90deg)'
 })
 const flowerBottomStyle = ref({
-  transform: 'translateX(-100%) rotate(-90deg) scaleX(-1)',
-  // opacity: 0
+  transform: 'translateX(100%) rotate(-90deg)'
 })
 
 const handleScroll = () => {
@@ -44,25 +42,21 @@ const handleScroll = () => {
   const elementVisible = rect.top < viewportHeight && rect.bottom > 0
   
   if (elementVisible) {
-    const visibilityRatio = 1 - (rect.top / viewportHeight)
+    const visibilityRatio = Math.min(1, Math.max(0, 1 - (rect.top / viewportHeight)))
     
-    // Верхняя ветвь - из-за правого края
     flowerTopStyle.value = {
-      transform: `translateX(${-100 + visibilityRatio * 100}%) rotate(90deg) scaleY(1) scaleX(1)`,
-      // opacity: visibilityRatio
+      transform: `translateX(${-100 + visibilityRatio * 100}%) rotate(90deg)`
     }
     
-    // Нижняя ветвь - из-за левого края
     flowerBottomStyle.value = {
-      transform: `translateX(${100 - visibilityRatio * 100}%) rotate(-90deg) scaleY(1) scaleX(1)`,
-      // opacity: visibilityRatio
+      transform: `translateX(${100 - visibilityRatio * 100}%) rotate(-90deg)`
     }
   }
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  handleScroll() // Проверяем сразу при загрузке
+  handleScroll()
 })
 
 onUnmounted(() => {
@@ -79,7 +73,6 @@ onUnmounted(() => {
   justify-content: center;
   min-height: 300px;
   margin: 100px 0;
-
 }
 
 .textBlock {
@@ -104,7 +97,7 @@ onUnmounted(() => {
 .flowerTop,
 .flowerBottom {
   position: absolute;
-  width: 70%;
+  width: 42%;
   z-index: 2;
   transition: transform 0.5s ease-out;
   will-change: transform;
@@ -112,13 +105,11 @@ onUnmounted(() => {
 
 .flowerTop {
   top: 70px;
-  right: 0px;
-  // transform-origin: right center;
+  right: 180px;
 }
 
 .flowerBottom {
   bottom: 70px;
-  left: 0px;
-  // transform-origin: left center;
+  left: 180px;
 }
 </style>
