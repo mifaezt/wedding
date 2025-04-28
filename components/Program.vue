@@ -29,7 +29,7 @@ const items = [
 
 <style module lang="scss">
 .programContainer {
-  margin: 10px 8px 30px 6px;
+  margin: 10px 8px 30px 20px;
 }
 
 .programTitle {

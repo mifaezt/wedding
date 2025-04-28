@@ -99,6 +99,7 @@ onUnmounted(() => {
     margin: 10px 10px 30px 10px;
     padding: 0 10px;
     position: relative;
+
     
 }
 
@@ -109,7 +110,7 @@ onUnmounted(() => {
     overflow: hidden;
     // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     // background-color: $secondary-color;
-    background-color: rgba(0, 51, 7, 0.342);
+    background-color: $container-color;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     

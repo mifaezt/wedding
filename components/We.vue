@@ -98,6 +98,7 @@
     @include center;
     position: relative;
     padding: 0px 10px;
+
     
     @include respond(tablet) {
       padding: 40px 0;
@@ -170,7 +171,7 @@
     text-align: center;
     font-size: 20px;
     text-shadow: 1px 1px 2px black;
-    background-color: rgba(0, 51, 7, 0.342);
+    background-color: $container-color;
     border-radius: 16px;
 
     

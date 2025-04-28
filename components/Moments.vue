@@ -8,7 +8,7 @@
     </div>
     <div :class="$style.momentsMomentRight">
       <h2 :class="$style.momentNum">02</h2>
-      <p :class="$style.momentMessage">Просим вас воздержаться от покупки цветов, мы их ненавидим и будем подметать пол вашими вениками 
+      <p :class="$style.momentMessage">Мы будем рады вашим поздравлениям и теплым словам вместо традиционных букетов.
       </p>
       <NuxtImg 
           :class="$style.drawingLeft" 
@@ -30,7 +30,7 @@
     </div>
     <div :class="$style.momentsMomentRight">
       <h2 :class="$style.momentNum">04</h2>
-      <p :class="$style.momentMessage">Мы будем рады любому подарку, не важно, в какой конверт вы его положите
+      <p :class="$style.momentMessage">Что то тут бы написать наверное
       </p>
       <NuxtImg 
           :class="$style.drawingLeftSecond" 
@@ -77,6 +77,7 @@
   margin: 100px 8px 30px 6px;
   padding: 0px 20px;
   position: relative;
+
 }
 
 .momentsTitle {
@@ -98,7 +99,7 @@
   font-size: 20px;
   line-height: 1.3;
   text-shadow: 1px 1px 2px black;
-  line-height: 110%;
+  line-height: 120%;
 }
 
 
@@ -107,6 +108,7 @@
   flex-direction: column;
   text-align: start;
   position: relative;
+  margin-bottom: 20px;
 
 }
 
@@ -115,6 +117,7 @@
   flex-direction: column;
   text-align: end;
   position: relative;
+  margin-bottom: 20px;
 
 }
 
@@ -122,9 +125,9 @@
 .drawingRight {
     position: absolute;
     width: 55%;
-    top: -30%;
-    right: -5%;
-    transform: scaleX(-1) scaleY(-1) rotate(35deg); /* Начальное положение */
+    top: -15%;
+    right: -15%;
+    transform: scaleX(-1) scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
 }
@@ -142,8 +145,8 @@
 .drawingLeftSecond {
     position: absolute;
     width: 65%;
-    top: -25%;
-    left: -10%;
+    top: -30%;
+    left: -20%;
     transform: scaleY(-1) rotate(60deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;

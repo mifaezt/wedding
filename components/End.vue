@@ -6,7 +6,14 @@
     </div>
     <NuxtImg 
       :class="$style.flowers" 
-      src="flowers.svg" 
+      src="lineDrawing2.svg" 
+      alt="Декоративный элемент"
+      loading="lazy"
+    />
+
+    <NuxtImg 
+      :class="$style.flowersDown" 
+      src="lineDrawing2.svg" 
       alt="Декоративный элемент"
       loading="lazy"
     />
@@ -24,14 +31,19 @@
   align-items: center;
   justify-content: center;
   min-height: 300px; /* или нужная вам высота */
+
 }
 
 .textContainer {
   position: relative;
   z-index: 1; /* чтобы текст был поверх цветов */
   text-align: center;
-  margin-bottom: 20px; /* можно регулировать отступ */
-  transform: translateY(0); /* можно двигать по вертикали */
+  transform: translateY(100px); /* можно двигать по вертикали */
+  background-color: $container-color;
+  border-radius: 20px;
+  margin: 20px 10px;
+  padding: 10px;
+
   /* или использовать margin/padding для позиционирования */
 }
 
@@ -51,10 +63,23 @@
 .flowers {
   position: absolute;
   transform: scale(1.2);
+  width: 70%;
   // top: 50%;
   // left: 50%;
-  top: 10%;
-  // transform:  scale(1.2);
+  top: -30%;
+  transform: scaleY(-1) rotate(90deg);
+  z-index: 0; /* цветы под текстом */
+  // opacity: 0.7; /* можно регулировать прозрачность */
+}
+
+.flowersDown {
+  position: absolute;
+  transform: scale(1.2);
+  width: 70%;
+  // top: 50%;
+  // left: 50%;
+  top: 55%;
+  transform: scaleY(1) scaleX(-1) rotate(90deg);
   z-index: 0; /* цветы под текстом */
   // opacity: 0.7; /* можно регулировать прозрачность */
 }

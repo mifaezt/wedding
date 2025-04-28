@@ -8,7 +8,7 @@
 </div>
 <NuxtImg 
           :class="$style.drawingDress" 
-          src="lineDrawing.png" 
+          src="colorEucal.png" 
           alt="Декоративный элемент"
           loading="lazy"
           :style="drawingDressStyle"
@@ -20,9 +20,9 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const scrollY = ref(0);
-const initialDressRotation = 0; // градусов
+const initialDressRotation = -20; // градусов
 const drawingDressStyle = ref({ 
-  transform: `scaleX(-1) scaleY(1) rotate(${initialDressRotation}deg)` 
+  transform: `scaleX(-1) scaleY(-1) rotate(${initialDressRotation}deg)` 
 });
 
 const handleScroll = () => {
@@ -32,7 +32,7 @@ const handleScroll = () => {
   
   // Dress - вращение по часовой (угол уменьшается)
   drawingDressStyle.value = {
-    transform: `scaleX(-1) scaleY(1) rotate(${initialDressRotation + rotationFactor}deg)`
+    transform: `scaleX(-1) scaleY(-1) rotate(${initialDressRotation + rotationFactor}deg)`
   };
 };
 
@@ -48,7 +48,7 @@ onUnmounted(() => {
 
 <style module lang="scss">
 .dressContainer {
-  margin: 10px 8px 30px 6px;
+  margin: 10px 8px 30px 20px;
   position: relative;
 }
 
@@ -72,10 +72,10 @@ onUnmounted(() => {
 
 .drawingDress {
   position: absolute;
-    width: 70%;
-    top: 30%;
+    width: 90%;
+    top: 25%;
     right: -10%;
-    transform: scaleX(-1) scaleY(1) rotate(50deg); /* Начальное положение */
+    transform: scaleX(-1) scaleY(-1) rotate(-20deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
 

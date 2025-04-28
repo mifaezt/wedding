@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.contactContainer">
     <h2 :class="$style.contactTitle">Контакты</h2>
-    <p :class="$style.contactMessage">Если у вас возникнут вопросы до дня проведения нашего торжества, вы можете задать их жениху или невесте. 
+    <p :class="$style.contactMessage">Если у вас возникнут вопросы до дня проведения нашего торжества, обратитесь к нам в личные  сообщения. 
 По всем вопросам в день торжества вы можете обращаться к нашему координатору Любови/Веронике и номер телефона. 
 </p>
 
@@ -48,7 +48,7 @@ align-items: center;
   font-size: 20px;
   line-height: 1.3;
   text-shadow: 1px 1px 2px black;
-  line-height: 110%;
+  line-height: 120%;
   text-align: center;
 }
 
