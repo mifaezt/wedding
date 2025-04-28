@@ -1,86 +1,124 @@
 <template>
-  <div :class="$style.contactContainer">
-    <div :class="$style.textContainer">
-      <p :class="$style.contactMessageFirst">С нетерпением ждём встречи с вами 25 июля! </p>
-      <p :class="$style.contactMessageSecond">С любовью, Игорь и Анастасия. </p>
-    </div>
+  <div ref="container" :class="$style.container">
     <NuxtImg 
-      :class="$style.flowers" 
-      src="lineDrawing2.svg" 
+      :class="$style.flowerTop" 
+      src="/lineDrawing2.svg" 
       alt="Декоративный элемент"
       loading="lazy"
+      :style="flowerTopStyle"
     />
-
+    
+    <div :class="$style.textBlock">
+      <p>С нетерпением ждём встречи с вами 25 июля!</p>
+      <p>С любовью, Игорь и Анастасия.</p>
+    </div>
+    
     <NuxtImg 
-      :class="$style.flowersDown" 
-      src="lineDrawing2.svg" 
+      :class="$style.flowerBottom" 
+      src="/lineDrawing2.svg" 
       alt="Декоративный элемент"
       loading="lazy"
+      :style="flowerBottomStyle"
     />
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const container = ref(null)
+const flowerTopStyle = ref({
+  transform: 'translateX(100%) rotate(90deg) scaleY(-1) scaleX(1) ',
+  opacity: 0
+})
+const flowerBottomStyle = ref({
+  transform: 'translateX(-100%) rotate(-90deg) scaleX(-1)',
+  opacity: 0
+})
+
+const handleScroll = () => {
+  if (!container.value) return
+  
+  const rect = container.value.getBoundingClientRect()
+  const viewportHeight = window.innerHeight
+  const elementVisible = rect.top < viewportHeight && rect.bottom > 0
+  
+  if (elementVisible) {
+    const visibilityRatio = 1 - (rect.top / viewportHeight)
+    
+    // Верхняя ветвь - из-за правого края
+    flowerTopStyle.value = {
+      transform: `translateX(${-100 + visibilityRatio * 100}%) rotate(90deg) scaleY(1) scaleX(1)`,
+      opacity: visibilityRatio
+    }
+    
+    // Нижняя ветвь - из-за левого края
+    flowerBottomStyle.value = {
+      transform: `translateX(${100 - visibilityRatio * 100}%) rotate(-90deg) scaleY(1) scaleX(1)`,
+      opacity: visibilityRatio
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // Проверяем сразу при загрузке
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <style module lang="scss">
-.contactContainer {
+.container {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 300px; /* или нужная вам высота */
+  min-height: 300px;
+  margin: 100px 0;
 
 }
 
-.textContainer {
-  position: relative;
-  z-index: 1; /* чтобы текст был поверх цветов */
+.textBlock {
   text-align: center;
-  transform: translateY(100px); /* можно двигать по вертикали */
   background-color: $container-color;
   border-radius: 20px;
-  margin: 20px 10px;
-  padding: 10px;
-
-  /* или использовать margin/padding для позиционирования */
+  padding: 20px;
+  margin: 0 10px;
+  z-index: 1;
+  
+  p {
+    font-size: 20px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px black;
+    
+    &:first-child {
+      margin-bottom: 10px;
+    }
+  }
 }
 
-.contactMessageFirst {
-  font-size: 20px;
-  line-height: 1.3;
-  text-shadow: 1px 1px 2px black;
-  margin-bottom: 10px; /* отступ между строками */
-}
-
-.contactMessageSecond {
-  font-size: 20px;
-  line-height: 1.3;
-  text-shadow: 1px 1px 2px black;
-}
-
-.flowers {
+.flowerTop,
+.flowerBottom {
   position: absolute;
-  transform: scale(1.2);
   width: 70%;
-  // top: 50%;
-  // left: 50%;
-  top: -30%;
-  transform: scaleY(-1) rotate(90deg);
-  z-index: 0; /* цветы под текстом */
-  // opacity: 0.7; /* можно регулировать прозрачность */
+  z-index: 2;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  will-change: transform, opacity;
 }
 
-.flowersDown {
-  position: absolute;
-  transform: scale(1.2);
-  width: 70%;
-  // top: 50%;
-  // left: 50%;
-  top: 55%;
-  transform: scaleY(1) scaleX(-1) rotate(90deg);
-  z-index: 0; /* цветы под текстом */
-  // opacity: 0.7; /* можно регулировать прозрачность */
+.flowerTop {
+  top: 70px;
+  right: 80px;
+  // transform-origin: right center;
+}
+
+.flowerBottom {
+  bottom: 70px;
+  left: 80px;
+  // transform-origin: left center;
 }
 </style>
