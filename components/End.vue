@@ -29,11 +29,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const container = ref(null)
 const flowerTopStyle = ref({
   transform: 'translateX(100%) rotate(90deg) scaleY(-1) scaleX(1) ',
-  opacity: 0
+  // opacity: 0
 })
 const flowerBottomStyle = ref({
   transform: 'translateX(-100%) rotate(-90deg) scaleX(-1)',
-  opacity: 0
+  // opacity: 0
 })
 
 const handleScroll = () => {
@@ -49,13 +49,13 @@ const handleScroll = () => {
     // Верхняя ветвь - из-за правого края
     flowerTopStyle.value = {
       transform: `translateX(${-100 + visibilityRatio * 100}%) rotate(90deg) scaleY(1) scaleX(1)`,
-      opacity: visibilityRatio
+      // opacity: visibilityRatio
     }
     
     // Нижняя ветвь - из-за левого края
     flowerBottomStyle.value = {
       transform: `translateX(${100 - visibilityRatio * 100}%) rotate(-90deg) scaleY(1) scaleX(1)`,
-      opacity: visibilityRatio
+      // opacity: visibilityRatio
     }
   }
 }
@@ -106,19 +106,19 @@ onUnmounted(() => {
   position: absolute;
   width: 70%;
   z-index: 2;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-  will-change: transform, opacity;
+  transition: transform 0.5s ease-out;
+  will-change: transform;
 }
 
 .flowerTop {
   top: 70px;
-  right: 80px;
+  right: 0px;
   // transform-origin: right center;
 }
 
 .flowerBottom {
   bottom: 70px;
-  left: 80px;
+  left: 0px;
   // transform-origin: left center;
 }
 </style>
