@@ -22,7 +22,7 @@ export default {
 <style module lang="scss">
 .calendarWrapper {
   position: relative;
-  padding: 0px 20px 30px 20px;
+  padding: 0px 0px 30px 0px;
   // background-color: rgba(0, 51, 7, 0.103);
   // border-radius: 16px;
 }
@@ -30,8 +30,9 @@ export default {
 .calendarContainer {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  // max-width: 800px;
   margin: 0 auto;
+
 }
 
 .calendarImageWrapper {
@@ -44,5 +45,10 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: contain;
+
+  @include respond(desktop) {
+    width: 1000px;
+
+    }
 }
 </style>

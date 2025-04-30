@@ -77,6 +77,9 @@
   margin: 100px 8px 30px 6px;
   padding: 0px 20px;
   position: relative;
+  @include respond(desktop) {
+    margin: 10px 10%;
+    }
 
 }
 
@@ -86,12 +89,19 @@
   line-height: 110%;
   color: white;
 
+  @include respond(desktop) {
+    font-size: 120px;
+    }
 }
 
 .momentNum {
   font-size: 60px;
   line-height: 130%;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.445);
+
+  @include respond(desktop) {
+    font-size: 150px;
+    }
 }
 
 .momentMessage{
@@ -100,6 +110,10 @@
   line-height: 1.3;
   text-shadow: 1px 1px 2px black;
   line-height: 120%;
+
+  @include respond(desktop) {
+    font-size: 80px;
+    }
 }
 
 
@@ -130,6 +144,11 @@
     transform: scaleX(-1) scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
+
+    @include respond(desktop) {
+      width: 470px;
+    }
+
 }
 
 .drawingLeft {
@@ -140,6 +159,10 @@
     transform: scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
+
+    @include respond(desktop) {
+      width: 400px;
+    }
 }
 
 .drawingLeftSecond {
@@ -150,6 +173,10 @@
     transform: scaleY(-1) rotate(60deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
+
+    @include respond(desktop) {
+      width: 470px;
+    }
 }
 
 </style>

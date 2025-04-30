@@ -1,6 +1,9 @@
 <template>
-    <h1 :class="$style.mainTitle">Wedding day</h1>
+
+
+
     <div :class="$style.weMain" ref="weMain">
+      <h1 :class="$style.mainTitle">Wedding day</h1>
       <div :class="$style.imgContainer">
         <NuxtImg :class="$style.weImg" src="We.jpg" />
       </div>
@@ -33,7 +36,7 @@
       <p :class="$style.letter">
         Дорогие родные и друзья <br>
         Приглашаем вас на нашу свадьбу! <br>
-        Мы хотим разделить этот важный день нашей жизни с вами - самыми близкими и родными людьми. 
+        Мы хотим разделить этот важный день нашей жизни с вами -<br> самыми близкими и родными людьми. 
       </p>
       <NuxtImg :class="$style.ornamentCenter" src="infitity.svg" />
     </div>
@@ -57,11 +60,11 @@
         
         // Параллакс эффект для ветвей
         mainPlantsStyle.value = {
-          transform: `translateY(${scrollY.value * 0.2}px) rotate(${scrollY.value * 0.02}deg)`
+          transform: `translateY(${scrollY.value * 0.2}px) rotate(${scrollY.value * 0.01}deg)`
         };
         
         mainPlantsRightStyle.value = {
-          transform: `scaleX(-1) translateY(${scrollY.value * 0.15}px) rotate(${-scrollY.value * -0.02}deg)`
+          transform: `scaleX(-1) translateY(${scrollY.value * 0.2}px) rotate(${-scrollY.value * -0.01}deg)`
         };
         
         secondPlantsStyle.value = {
@@ -69,18 +72,24 @@
         };
         
         secondPlantsRightStyle.value = {
-          transform: `scaleX(-1) translateY(${scrollY.value * 0.05}px) rotate(${-scrollY.value * -0.01}deg)`
+          transform: `scaleX(-1) translateY(${scrollY.value * 0.1}px) rotate(${-scrollY.value * -0.01}deg)`
         };
       };
   
       onMounted(() => {
+        if (window.innerWidth < 1200) {
         window.addEventListener('scroll', handleScroll);
         handleScroll(); // Инициализация начального положения
+      }
       });
   
       onUnmounted(() => {
+
         window.removeEventListener('scroll', handleScroll);
+ 
       });
+
+ 
   
       return {
         weMain,
@@ -96,18 +105,20 @@
   <style module lang="scss">
   .weMain {
     @include center;
-    position: relative;
+    // position: relative;
     padding: 0px 10px;
 
     
     @include respond(tablet) {
       padding: 40px 0;
     }
+
   }
   
   .imgContainer {
     margin: 0px 20px;
     z-index: 2;
+    max-width: 1200px;
     
     @include respond(mobile) {
       margin: 0px 30px;
@@ -122,12 +133,17 @@
     border: 2px solid $text-color;
     max-width: 100%;
     height: auto;
+    margin-top: 37%;
   }
   
   .mainTitle {
     @include center;
     font-size: 40px;
-    margin-bottom: 10px;
+    position: absolute;
+    top: 8%;
+    z-index: 4;
+    text-shadow: 1px 1px 10px black;
+    // margin-bottom: 10px;
     
     @include respond(mobile) {
       font-size: 60px;
@@ -136,6 +152,11 @@
     @include respond(tablet) {
       font-size: 40px;
     }
+
+    @include respond(desktop) {
+      font-size: 150px;
+    }
+    
   }
   
   .names {
@@ -152,6 +173,10 @@
     @include respond(tablet) {
       font-size: 35px;
     }
+
+    @include respond(desktop) {
+      font-size: 130px;
+    }
   }
   
   .date {
@@ -164,6 +189,10 @@
     @include respond(tablet) {
       font-size: 20px;
     }
+
+    @include respond(desktop) {
+      font-size: 80px;
+    }
   }
   
   .letter {
@@ -173,15 +202,20 @@
     text-shadow: 1px 1px 2px black;
     background-color: $container-color;
     border-radius: 16px;
+    max-width: 1200px;
 
     
     @include respond(mobile) {
-      padding: 10px 30px;
+      padding: 10px 10px;
       font-size: 20px;
     }
     
     @include respond(tablet) {
       font-size: 18px;
+    }
+
+    @include respond(desktop) {
+      font-size: 60px;
     }
   }
   
@@ -191,7 +225,7 @@
   }
   
   .ornamentCenter {
-    width: 50%;
+    width: 40%;
     margin: 20px auto;
     display: block;
     
@@ -202,13 +236,17 @@
     @include respond(tablet) {
       width: 25%;
     }
+
+    @include respond(desktop) {
+      width: 30%;
+    }
   }
   
   .imgMainPlants {
     position: absolute;
     width: 40%;
     left: 0;
-    top: -5%;
+    top: 0;
     z-index: 3;
     @include transition-all(0.1s);
     
@@ -227,7 +265,7 @@
     position: absolute;
     width: 40%;
     right: 0;
-    top: -5%;
+    top: 0;
     z-index: 3;
     @include transition-all(0.1s);
     

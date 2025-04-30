@@ -73,6 +73,13 @@ onUnmounted(() => {
   justify-content: center;
   min-height: 300px;
   margin: 100px 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  @include respond(mobile) {
+  
+  }
 }
 
 .textBlock {
@@ -82,11 +89,22 @@ onUnmounted(() => {
   padding: 20px;
   margin: 0 10px;
   z-index: 1;
+  max-width: 90%; /* Добавлено */
+
+  @include respond(desktop) {
+    padding: 40px;
+    }
+
+
   
   p {
     font-size: 20px;
     line-height: 1.3;
     text-shadow: 1px 1px 2px black;
+
+    @include respond(desktop) {
+      font-size: 80px;
+    }
     
     &:first-child {
       margin-bottom: 10px;
@@ -98,18 +116,39 @@ onUnmounted(() => {
 .flowerBottom {
   position: absolute;
   width: 42%;
+  max-width: 200px; /* Добавлено */
   z-index: 2;
   transition: transform 0.5s ease-out;
   will-change: transform;
 }
 
 .flowerTop {
-  top: 70px;
-  right: 180px;
+  top: 10%; /* Изменено с фиксированного значения */
+  right: 5%; /* Изменено с фиксированного значения */
 }
 
 .flowerBottom {
-  bottom: 70px;
-  left: 180px;
+  bottom: 10%; /* Изменено с фиксированного значения */
+  left: 5%; /* Изменено с фиксированного значения */
+}
+
+/* Добавьте медиазапросы для адаптивности */
+@include respond(mobile) {
+  .flowerTop,
+  .flowerBottom {
+    width: 35%;
+  }
+  
+  .textBlock {
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+@include respond(desktop) {
+  .flowerTop,
+  .flowerBottom {
+    display: none;
+  }
 }
 </style>

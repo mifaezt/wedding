@@ -30,6 +30,8 @@ const items = [
 <style module lang="scss">
 .programContainer {
   margin: 10px 8px 30px 20px;
+  @include respond(desktop) {
+  }
 }
 
 .programTitle {
@@ -37,6 +39,10 @@ const items = [
   text-align: right;
   margin-right: 10%;
   color: white;
+
+  @include respond(desktop) {
+    font-size: 120px;
+    }
 }
 
 .programContainerInner {
@@ -50,12 +56,23 @@ const items = [
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(40px, auto));
   align-items: center;
+
+  @include respond(desktop) {
+    grid-template-rows: repeat(auto-fill, minmax(120px, auto)); // Больше места для строк
+    gap: 10px; // Добавляем промежутки между строками
+  }
 }
 
 .programRow {
   min-height: 40px;
   display: flex;
   align-items: center;
+
+  @include respond(desktop) {
+    min-height: 120px; // Увеличиваем высоту под большие шрифты
+    padding-top: 20px; // Добавляем отступы сверху/снизу
+    padding-bottom: 20px;
+  }
 }
 
 .timeColumn {
@@ -74,15 +91,27 @@ const items = [
 .verticalDivider {
   background-color: white;
   margin: 5px 0;
+
+  
+  @include respond(desktop) {
+    margin: 0; // Убираем отступы, чтобы разделитель был во всю высоту
+    height: 100%;
+  }
+
 }
 
 .programTime {
-  font-size: 24px; /* Увеличили размер шрифта */
+  font-size: 24px; 
   line-height: 1.3;
   text-shadow: 1px 1px 2px black;
   display: flex;
   align-items: center; /* Добавили для вертикального выравнивания */
-  height: 100%; /* Занимает всю высоту строки */
+  height: 100%;
+
+  @include respond(desktop) {
+    font-size: 80px;
+
+    }
 }
 
 .programEvent {
@@ -90,7 +119,11 @@ const items = [
   line-height: 1.3;
   text-shadow: 1px 1px 2px black;
   display: flex;
-  align-items: center; /* Добавили для вертикального выравнивания */
-  height: 100%; /* Занимает всю высоту строки */
+  align-items: center; 
+  height: 100%; 
+
+  @include respond(desktop) {
+    font-size: 80px;
+    }
 }
 </style>

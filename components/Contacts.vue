@@ -32,6 +32,10 @@ flex-direction: column;
 justify-content: center;
 align-content: center;
 align-items: center;
+
+@include respond(desktop) {
+    margin: 10px 10%;
+    }
 }
 
 .contactTitle {
@@ -41,6 +45,10 @@ align-items: center;
   line-height: 110%;
   color: white;
   padding-bottom: 10px;
+
+  @include respond(desktop) {
+    font-size: 120px;
+    }
 }
 
 .contactMessage{
@@ -50,6 +58,10 @@ align-items: center;
   text-shadow: 1px 1px 2px black;
   line-height: 120%;
   text-align: center;
+
+  @include respond(desktop) {
+    font-size: 80px;
+    }
 }
 
 .button {
@@ -71,7 +83,7 @@ align-items: center;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     // position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     
     &:hover {
         transform: translateY(-3px);
@@ -80,6 +92,14 @@ align-items: center;
         // .arrowIcon {
         //     transform: translateX(3px);
         // }
+    }
+
+    @include respond(desktop) {
+        font-size: 60px;
+        margin: 40px;
+        padding:30px 40px ;
+        border-radius: 40px;
+        border: 4px solid white;
     }
 }
 </style>

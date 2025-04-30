@@ -32,8 +32,7 @@
                     </svg> -->
                 </NuxtLink>
             </div>
-        </div>
-        <NuxtImg 
+            <NuxtImg 
           :class="$style.drawingLeft" 
           src="lineDrawing.png" 
           alt="Декоративный элемент"
@@ -47,6 +46,8 @@
           loading="lazy"
           :style="drawingRightStyle"
         />
+        </div>
+        
 
     </div>
 </template>
@@ -70,7 +71,7 @@ const drawingRightStyle = ref({
 
 const handleScroll = () => {
   scrollY.value = window.scrollY;
-  const rotationFactor = scrollY.value * 0.03; // Коэффициент скорости вращения
+  const rotationFactor = scrollY.value * 0.02; // Коэффициент скорости вращения
   
   // Left - вращение против часовой (угол увеличивается)
   drawingLeftStyle.value = {
@@ -84,8 +85,10 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
+
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // Инициализация начального положения
+
 });
 
 onUnmounted(() => {
@@ -105,9 +108,10 @@ onUnmounted(() => {
 
 .placeContainer {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     border-radius: 16px;
-    overflow: hidden;
+    position: relative;
+    // overflow: hidden;
     // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     // background-color: $secondary-color;
     background-color: $container-color;
@@ -134,6 +138,10 @@ onUnmounted(() => {
     line-height: 120%;
     color: white;
     display: inline-block;
+
+    @include respond(desktop) {
+      font-size: 120px;
+    }
 }
 
 
@@ -150,6 +158,10 @@ onUnmounted(() => {
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+
+    @include respond(desktop) {
+        height: auto;
+    }
 }
 
 .address {
@@ -157,13 +169,16 @@ onUnmounted(() => {
     margin: 0px 0px 10px;
     color: rgba(255, 255, 255, 0.9);
     // line-height: 1.6;
+    @include respond(desktop) {
+        font-size: 40px;
+    }
 }
 
 .imageWrapper {
     width: 100%;
-    height: 250px;
+    // height: 250px;
     border-radius: 8px;
-    overflow: hidden;
+    // overflow: hidden;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -203,7 +218,7 @@ onUnmounted(() => {
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     
     &:hover {
         transform: translateY(-3px);
@@ -212,6 +227,14 @@ onUnmounted(() => {
         .arrowIcon {
             transform: translateX(3px);
         }
+    }
+
+    @include respond(desktop) {
+        font-size: 60px;
+        margin: 40px;
+        padding:30px 40px ;
+        border-radius: 40px;
+        border: 4px solid white;
     }
 }
 
@@ -226,19 +249,32 @@ onUnmounted(() => {
     position: absolute;
     width: 180px;
     top: -15%;
-    right: -5%;
+    right: -8%;
     transform: scaleX(-1) scaleY(-1) rotate(35deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
+
+    @include respond(desktop) {
+        width: 380px;
+    top: -10%;
+    right: -10%;
+    }
 }
+
 
 .drawingLeft {
     position: absolute;
     width: 180px;
     top: -15%;
-    left: -5%;
+    left: -8%;
     transform: scaleY(-1) rotate(40deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
+
+    @include respond(desktop) {
+        width: 380px;
+    top: -10%;
+    left: -10%;
+    }
 }
 </style>
