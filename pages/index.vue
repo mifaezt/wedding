@@ -1,39 +1,37 @@
 <template>
-  <div :class="$style.container">
-    <We/>
-    <Calendar/>
-    <Place/>
-    <Program />
-    <Dress />
-    <Moments />
-    <Contacts />
-    <End />
-  </div>
+	<div :class="$style.container">
+		<We />
+		<Calendar />
+		<Place />
+		<Program />
+		<Dress />
+		<Moments />
+		<Contacts />
+		<End />
+	</div>
 </template>
 
 <script setup></script>
 
 <style module lang="scss">
-
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
-
+html,
+body {
+	position: relative;
+	overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
 
-
-  @include respond(desktop) {
-    gap: 80px;
+	@include respond(desktop) {
+		gap: 80px;
+	}
 }
-}
-
 </style>
