@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const container = ref(null)
 const flowerTopStyle = ref({
@@ -75,7 +75,7 @@ onUnmounted(() => {
 	align-items: center;
 	justify-content: center;
 	min-height: 300px;
-	margin: 100px 0;
+	margin: 50px 0;
 	width: 100%;
 	max-width: 100%;
 	// overflow: hidden;

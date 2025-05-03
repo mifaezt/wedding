@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const scrollY = ref(0)
 const initialDressRotation = -20
@@ -50,11 +50,11 @@ onUnmounted(() => {
 
 <style module lang="scss">
 .dressContainer {
-	margin: 10px 8px 30px 20px;
+	margin: 10px 8px 30px 0px;
 	position: relative;
 	// max-width: 1200px;
 	margin: 0 auto;
-	padding: 20px 20px;
+	padding: 0px 20px;
 
 	@include respond(desktop) {
 		// padding: 80px 40px;
@@ -100,7 +100,7 @@ onUnmounted(() => {
 .drawingDress {
 	position: absolute;
 	width: 400px;
-	bottom: -200px;
+	bottom: -230px;
 	right: -50px;
 	transform: scaleX(-1) scaleY(-1) rotate(-20deg);
 	will-change: transform;
