@@ -43,33 +43,6 @@
 </template>
 
 <script setup>
-// import { ref, onMounted, onUnmounted } from 'vue';
-
-// const scrollY = ref(0);
-// const initialDressRotation = 0; // градусов
-// const drawingDressStyle = ref({ 
-//   transform: `scaleX(-1) scaleY(1) rotate(${initialDressRotation}deg)` 
-// });
-
-// const handleScroll = () => {
-//   scrollY.value = window.scrollY;
-//   const rotationFactor = scrollY.value * 0.03; // Коэффициент скорости вращения
-  
-  
-//   // Dress - вращение по часовой (угол уменьшается)
-//   drawingDressStyle.value = {
-//     transform: `scaleX(-1) scaleY(1) rotate(${initialDressRotation + rotationFactor}deg)`
-//   };
-// };
-
-// onMounted(() => {
-//   window.addEventListener('scroll', handleScroll);
-//   handleScroll(); // Инициализация начального положения
-// });
-
-// onUnmounted(() => {
-//   window.removeEventListener('scroll', handleScroll);
-// });
 </script>
 
 <style module lang="scss">
@@ -78,42 +51,27 @@
   padding: 0px 20px;
   position: relative;
   @include respond(desktop) {
-    margin: 10px 10%;
+    margin-top: 2%;
+    max-width: 60%;
     }
 
 }
 
 .momentsTitle {
-  font-size: 40px;
-  text-align: center;
+  text-align: end;
   line-height: 110%;
-  color: white;
 
-  @include respond(desktop) {
-    font-size: 120px;
-    }
 }
 
 .momentNum {
-  font-size: 60px;
   line-height: 130%;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.445);
-
-  @include respond(desktop) {
-    font-size: 150px;
-    }
 }
 
 .momentMessage{
   padding-top: 10px;
-  font-size: 20px;
   line-height: 1.3;
-  text-shadow: 1px 1px 2px black;
   line-height: 120%;
 
-  @include respond(desktop) {
-    font-size: 80px;
-    }
 }
 
 
@@ -139,14 +97,22 @@
 .drawingRight {
     position: absolute;
     width: 200px;
-    top: -20px;
+    top: -55px;
     right: -60px;
     transform: scaleX(-1) scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
 
+    @include respond(mobileS) {
+      width: 150px;
+      top: -40px;
+      right: -60px;
+    }
+
     @include respond(desktop) {
-      width: 470px;
+      width: 370px;
+      top: -110px;
+      right: -300px;
     }
 
 }
@@ -154,29 +120,45 @@
 .drawingLeft {
     position: absolute;
     width: 170px;
-    top: 0;
+    top: -30px;
     left: -70px;
     transform: scaleY(-1) rotate(50deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
 
+    @include respond(mobileS) {
+      width: 150px;
+      top: -40px;
+      left: -60px;
+    }
+
     @include respond(desktop) {
-      width: 400px;
+      width: 360px;
+      top: -110px;
+      left: -130px;
     }
 }
 
 .drawingLeftSecond {
     position: absolute;
-    width: 250px;
-    top: -50px;
-    left: -30px;
+    width: 200px;
+    top: -55px;
+    left: -50px;
     transform: scaleY(-1) rotate(60deg); /* Начальное положение */
     will-change: transform;
     transition: transform 0.3s ease;
 
-    @include respond(desktop) {
-      width: 470px;
+    @include respond(mobileS) {
+      width: 180px;
+      top: -50px;
+      left: -60px;
     }
+
+    @include respond(desktop) {
+       width: 570px;
+      top: -100px;
+     left: -400px;
+  }
 }
 
 </style>

@@ -52,12 +52,11 @@ onUnmounted(() => {
 .dressContainer {
 	margin: 10px 8px 30px 0px;
 	position: relative;
-	// max-width: 1200px;
 	margin: 0 auto;
 	padding: 0px 20px;
 
 	@include respond(desktop) {
-		// padding: 80px 40px;
+	max-width: 60%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -70,29 +69,28 @@ onUnmounted(() => {
 	@include respond(desktop) {
 		margin-left: 10%;
 		width: 60%;
-		// max-width: 600px;
 	}
 }
 
 .dressTitle {
-	font-size: 40px;
 	text-align: left;
-	color: white;
 	margin-bottom: 20px;
 
+	@include respond(mobileM) {
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
 	@include respond(desktop) {
-		font-size: 120px;
 		margin-bottom: 30px;
 	}
 }
 
 .dressMessage {
-	font-size: 20px;
 	line-height: 1.5;
 	text-shadow: 1px 1px 2px black;
 
 	@include respond(desktop) {
-		font-size: 80px;
 		line-height: 1.6;
 	}
 }
@@ -107,11 +105,26 @@ onUnmounted(() => {
 	transition: transform 0.3s ease;
 	z-index: 1;
 
+
+
+	@include respond(mobileS) {
+		width: 350px;
+		bottom: -180px;
+		right: -40px;
+		transform: scaleX(-1) scaleY(-1) rotate(-20deg);
+	}
+
+	@include respond(mobileM) {
+		width: 350px;
+		bottom: -200px;
+		right: -40px;
+		transform: scaleX(-1) scaleY(-1) rotate(-20deg);
+	}
+
 	@include respond(desktop) {
 		width: 850px;
-		bottom: -200px;
-		right: -5px;
-
+		bottom: -240px;
+		right: -300px;
 		transform: scaleX(-1) scaleY(-1) rotate(-20deg);
 	}
 }

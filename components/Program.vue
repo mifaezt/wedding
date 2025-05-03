@@ -4,13 +4,13 @@
     <div :class="$style.programContainerInner">
       <div :class="$style.timeColumn">
         <div v-for="(item, index) in items" :key="'time-'+index" :class="$style.programRow">
-          <div :class="$style.programTime">{{ item.time }}</div>
+          <div :class="$style.programTime"><p>{{ item.time }}</p></div>
         </div>
       </div>
       <div :class="$style.verticalDivider"></div>
       <div :class="$style.eventColumn">
         <div v-for="(item, index) in items" :key="'event-'+index" :class="$style.programRow">
-          <div :class="$style.programEvent">{{ item.event }}</div>
+          <div :class="$style.programEvent"><p>{{ item.event }}</p></div>
         </div>
       </div>
     </div>
@@ -30,36 +30,32 @@ const items = [
 <style module lang="scss">
 .programContainer {
   margin: 10px 8px 30px 20px;
-  @include respond(desktop) {
+
+  @include respond(mobileM) {
+    margin: 0px 8px 30px 20px;
   }
 }
 
 .programTitle {
-  font-size: 40px;
   text-align: right;
   margin-right: 10%;
-  color: white;
 
-  @include respond(desktop) {
-    font-size: 120px;
-    }
 }
 
 .programContainerInner {
   display: grid;
   grid-template-columns: auto 2px 1fr;
-  width: 100%;
-  color: white;
+
 }
 
 .timeColumn, .eventColumn {
   display: grid;
-  grid-template-rows: repeat(auto-fill, minmax(40px, auto));
+  grid-template-rows: repeat(auto-fill, minmax(50px, auto));
   align-items: center;
 
   @include respond(desktop) {
-    grid-template-rows: repeat(auto-fill, minmax(120px, auto)); // Больше места для строк
-    gap: 10px; // Добавляем промежутки между строками
+    // grid-template-rows: repeat(auto-fill, minmax(120px, auto)); // Больше места для строк
+    gap: 20px; // Добавляем промежутки между строками
   }
 }
 
@@ -69,9 +65,9 @@ const items = [
   align-items: center;
 
   @include respond(desktop) {
-    min-height: 120px; // Увеличиваем высоту под большие шрифты
-    padding-top: 20px; // Добавляем отступы сверху/снизу
-    padding-bottom: 20px;
+    // min-height: 120px; // Увеличиваем высоту под большие шрифты
+    // padding-top: 20px; // Добавляем отступы сверху/снизу
+    // padding-bottom: 20px;
   }
 }
 
@@ -92,38 +88,31 @@ const items = [
   background-color: white;
   margin: 5px 0;
 
-  
+  @include respond(mobileM) {
+    height: 110%;
+  }
+
   @include respond(desktop) {
     margin: 0; // Убираем отступы, чтобы разделитель был во всю высоту
     height: 100%;
   }
 
+
 }
 
 .programTime {
-  font-size: 24px; 
   line-height: 1.3;
-  text-shadow: 1px 1px 2px black;
   display: flex;
   align-items: center; /* Добавили для вертикального выравнивания */
   height: 100%;
 
-  @include respond(desktop) {
-    font-size: 80px;
-
-    }
 }
 
 .programEvent {
-  font-size: 20px;
   line-height: 1.3;
-  text-shadow: 1px 1px 2px black;
   display: flex;
   align-items: center; 
   height: 100%; 
 
-  @include respond(desktop) {
-    font-size: 80px;
-    }
 }
 </style>

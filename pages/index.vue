@@ -20,6 +20,7 @@ body {
 	overflow-x: hidden;
 	width: 100%;
 	max-width: 100%;
+
 }
 
 .container {
@@ -31,7 +32,7 @@ body {
 	align-items: center;
 
 	@include respond(desktop) {
-		gap: 80px;
+		gap: 10px;
 	}
 }
 </style>

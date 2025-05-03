@@ -8,7 +8,7 @@
 
 		<NuxtLink
 			:class="$style.button"
-			to="https://yandex.ru/maps/-/CHfaqTZF"
+			to="https://memepedia.ru/wp-content/uploads/2018/08/8ed.jpg"
 			aria-label="Чат свадьбы"
 		>
 			<span>Чат свадьбы</span>
@@ -23,7 +23,7 @@
 
 <style module lang="scss">
 .contactContainer {
-	margin-top: 60px;
+	margin-top: 20px;
 	padding: 0px 20px;
 	display: flex;
 	flex-direction: column;
@@ -32,47 +32,34 @@
 	align-items: center;
 
 	@include respond(desktop) {
-		margin: 10px 10%;
+		max-width: 60%;
 	}
 }
 
 .contactTitle {
-	font-size: 40px;
 	text-align: center;
-
 	line-height: 110%;
-	color: white;
 	padding-bottom: 10px;
-
-	@include respond(desktop) {
-		font-size: 120px;
-	}
 }
 
 .contactMessage {
 	padding-top: 10px;
-	font-size: 20px;
 	line-height: 1.3;
 	text-shadow: 1px 1px 2px black;
 	line-height: 120%;
 	text-align: center;
-
-	@include respond(desktop) {
-		font-size: 80px;
-	}
 }
 
 .button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 50%;
+	// width: 50%;
 	margin-top: 20px;
 	padding: 12px 10px;
 	border-radius: 20px;
 	border: 2px solid white;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.493);
-	// background-color: white;
 	color: $text-color;
 	font-size: 20px;
 	font-family: Comfortaa;
@@ -80,24 +67,32 @@
 	text-decoration: none;
 	transition: all 0.3s ease;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	// position: relative;
-	// overflow: hidden;
+
 
 	&:hover {
 		transform: translateY(-3px);
 		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-
-		// .arrowIcon {
-		//     transform: translateX(3px);
-		// }
 	}
 
+	@include respond(mobileS) {
+		font-size: 14px;
+		padding: 10px 10px;
+	}
+
+	@include respond(tablet) {
+		font-size: 25px;
+		padding: 20px 20px;
+		border-radius: 20px;
+		border: 2px solid white;
+	}
+
+
 	@include respond(desktop) {
-		font-size: 60px;
-		margin: 40px;
+		font-size: 40px;
 		padding: 30px 40px;
 		border-radius: 40px;
 		border: 4px solid white;
 	}
+
 }
 </style>

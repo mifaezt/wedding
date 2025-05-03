@@ -16,7 +16,7 @@
 		/>
 		<div :class="$style.mainInfoTitle">
 			<h2 :class="$style.names">Игорь и Анастасия</h2>
-			<h2 :class="$style.date">25 / 07 / 2025</h2>
+			<h3 :class="$style.date">25 / 07 / 2025</h3>
 		</div>
 		<NuxtImg
 			:class="$style.imgSecondPlants"
@@ -122,6 +122,9 @@ export default {
 	margin: 0px 20px;
 	z-index: 2;
 	max-width: 1200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@include respond(mobile) {
 		margin: 0px 30px;
@@ -137,86 +140,64 @@ export default {
 	max-width: 100%;
 	height: auto;
 	margin-top: 37%;
+
+	@include respond(desktop) {
+		max-width: 50%;
+		margin-top: 17%;
+	}
 }
 
 .mainTitle {
 	@include center;
-	font-size: 40px;
 	position: absolute;
-	top: 1%;
+	top: 73px;
 	z-index: 4;
 	text-shadow: 1px 1px 10px black;
-	// margin-bottom: 10px;
 
-	@include respond(mobile) {
-		font-size: 60px;
+
+	@include respond(mobileS) {
+		top: 40px;
+	}
+
+	@include respond(mobileM) {
+		top: 62px;
 	}
 
 	@include respond(tablet) {
-		font-size: 40px;
+		top: 150px;
 	}
 
+	
 	@include respond(desktop) {
-		font-size: 150px;
+		top: 0;
 	}
+
+
 }
 
 .names {
-	// margin-top: 20px;
-	font-size: 40px;
 	line-height: 1.4em;
 	text-align: center;
 
-	@include respond(mobile) {
-		font-size: 40px;
-	}
-
-	@include respond(tablet) {
-		font-size: 35px;
-	}
-
-	@include respond(desktop) {
-		font-size: 130px;
-	}
 }
 
 .date {
 	font-family: $font-main;
 	font-weight: 200;
-	font-size: 30px;
 	text-align: center;
-	// margin-bottom: 20px;
 
-	@include respond(tablet) {
-		font-size: 20px;
-	}
-
-	@include respond(desktop) {
-		font-size: 80px;
-	}
 }
 
 .letter {
 	padding: 10px 20px;
 	text-align: center;
-	font-size: 20px;
-	text-shadow: 1px 1px 2px black;
 	background-color: $container-color;
 	border-radius: 16px;
-	max-width: 1200px;
-
-	@include respond(mobile) {
-		padding: 10px 10px;
-		font-size: 20px;
-	}
-
-	@include respond(tablet) {
-		font-size: 18px;
-	}
 
 	@include respond(desktop) {
-		font-size: 60px;
+		max-width: 50%;
 	}
+
 }
 
 .mainInfoTitle {
@@ -298,6 +279,10 @@ export default {
 		width: 20%;
 		left: -5%;
 	}
+
+	@include respond(desktop) {
+		top: 15%;
+	}
 }
 
 .imgSecondPlantsRight {
@@ -316,6 +301,10 @@ export default {
 	@include respond(tablet) {
 		width: 20%;
 		right: -5%;
+	}
+
+	@include respond(desktop) {
+		top: 15%;
 	}
 }
 </style>

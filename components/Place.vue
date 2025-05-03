@@ -103,6 +103,9 @@ onUnmounted(() => {
     padding: 0 10px;
     position: relative;
 
+    @include respond(desktop) {
+        max-width: 50%;
+    }
     
 }
 
@@ -111,9 +114,6 @@ onUnmounted(() => {
     max-width: 1200px;
     border-radius: 16px;
     position: relative;
-    // overflow: hidden;
-    // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    // background-color: $secondary-color;
     background-color: $container-color;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -126,22 +126,15 @@ onUnmounted(() => {
 
 .contentWrapper {
     padding: 20px 20px 20px;
-
     text-align: center;
     color: $text-color;
 }
 
 .title {
-    font-size: 45px;
-    font-weight: 400;
     letter-spacing: 1px;
     line-height: 120%;
-    color: white;
     display: inline-block;
 
-    @include respond(desktop) {
-      font-size: 120px;
-    }
 }
 
 
@@ -154,7 +147,6 @@ onUnmounted(() => {
 }
 
 .logo {
-    height: 60px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -168,9 +160,8 @@ onUnmounted(() => {
     font-size: 12px;
     margin: 0px 0px 10px;
     color: rgba(255, 255, 255, 0.9);
-    // line-height: 1.6;
     @include respond(desktop) {
-        font-size: 40px;
+        font-size: 20px;
     }
 }
 
@@ -209,7 +200,6 @@ onUnmounted(() => {
     padding: 12px 20px;
     border-radius: 20px;
     border: 2px solid white;
-    // background-color: white;
     color: $text-color;
     font-size: 20px;
     font-family: Comfortaa;
@@ -229,8 +219,29 @@ onUnmounted(() => {
         }
     }
 
+    @include respond(mobileS) {
+        font-size: 15px;
+        padding:10px 20px ;
+        border-radius: 20px;
+        border: 2px solid white;
+    }
+
+    @include respond(mobileM) {
+        font-size: 15px;
+        padding:10px 20px ;
+        border-radius: 15px;
+        border: 1px solid white;
+    }
+
+    @include respond(tablet) {
+        font-size: 25px;
+        padding:12px 20px ;
+        border-radius: 15px;
+        border: 2px solid white;
+    }
+
     @include respond(desktop) {
-        font-size: 60px;
+        font-size: 30px;
         margin: 40px;
         padding:30px 40px ;
         border-radius: 40px;
@@ -238,12 +249,12 @@ onUnmounted(() => {
     }
 }
 
-.arrowIcon {
-    width: 18px;
-    height: 18px;
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-}
+// .arrowIcon {
+//     width: 18px;
+//     height: 18px;
+//     margin-left: 8px;
+//     transition: transform 0.3s ease;
+// }
 
 .drawingRight {
     position: absolute;
@@ -254,10 +265,22 @@ onUnmounted(() => {
     will-change: transform;
     transition: transform 0.3s ease;
 
+    @include respond(mobileS) {
+        width: 150px;
+        top: -15%;
+        right: -15%;
+    }
+
+    @include respond(tablet) {
+        width: 250px;
+        top: -10%;
+        right: -10%;
+    }
+
     @include respond(desktop) {
-        width: 380px;
-    top: -10%;
-    right: -10%;
+        width: 550px;
+        top: -20%;
+        right: -50%;
     }
 }
 
@@ -271,10 +294,22 @@ onUnmounted(() => {
     will-change: transform;
     transition: transform 0.3s ease;
 
+    @include respond(mobileS) {
+        width: 150px;
+        top: -15%;
+        left: -15%;
+    }
+
+    @include respond(tablet) {
+        width: 250px;
+        top: -10%;
+        left: -10%;
+    }
+
     @include respond(desktop) {
-        width: 380px;
-    top: -10%;
-    left: -10%;
+        width: 550px;
+        top: -20%;
+        left: -50%;
     }
 }
 </style>

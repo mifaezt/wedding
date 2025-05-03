@@ -1,5 +1,21 @@
 // Медиазапросы
 @mixin respond($breakpoint) {
+  // Mobile-first подход - стили применяются от меньшего к большему
+  @if $breakpoint == mobileS {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobileM {
+    @media (min-width: 375px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media (min-width: 425px) {
+      @content;
+    }
+  }
   @if $breakpoint == tablet {
     @media (min-width: 768px) {
       @content;
@@ -7,24 +23,6 @@
   }
   @if $breakpoint == desktop {
     @media (min-width: 1024px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == mobile {
-    @media (min-width: 425px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == mobileS {
-    @media (min-width: 320px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == mobileM {
-    @media (min-width: 375px) {
       @content;
     }
   }
