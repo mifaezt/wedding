@@ -75,13 +75,14 @@
 	}
 
 	@include respond(mobileS) {
-		font-size: 14px;
-		padding: 10px 10px;
+		font-size: 18px;
+        padding:12px 20px ;
+        border-radius: 15px;
 	}
 
 	@include respond(mobile) {
 		font-size: 18px;
-		padding: 10px 10px;
+		padding: 12px 20px;
 		border-radius: 15px;
 	}
 
@@ -89,7 +90,6 @@
 		font-size: 25px;
 		padding: 20px 20px;
 		border-radius: 20px;
-		border: 2px solid white;
 	}
 
 

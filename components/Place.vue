@@ -224,9 +224,9 @@ onUnmounted(() => {
     }
 
     @include respond(mobileS) {
-        font-size: 15px;
-        padding:10px 20px ;
-        border-radius: 20px;
+        font-size: 18px;
+        padding:12px 20px ;
+        border-radius: 15px;
         border: 2px solid white;
     }
 

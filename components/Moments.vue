@@ -68,7 +68,7 @@
 }
 
 .momentMessage{
-  padding-top: 10px;
+  padding-top: 20px;
   line-height: 1.3;
   line-height: 120%;
 
