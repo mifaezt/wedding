@@ -160,6 +160,10 @@ onUnmounted(() => {
     font-size: 12px;
     margin: 0px 0px 10px;
     color: rgba(255, 255, 255, 0.9);
+
+    @include respond(tablet) {
+        font-size: 20px;
+    }
     @include respond(desktop) {
         font-size: 20px;
     }
@@ -226,8 +230,8 @@ onUnmounted(() => {
         border: 2px solid white;
     }
 
-    @include respond(mobileM) {
-        font-size: 15px;
+    @include respond(mobile) {
+        font-size: 18px;
         padding:10px 20px ;
         border-radius: 15px;
         border: 1px solid white;

@@ -53,6 +53,10 @@ const items = [
   grid-template-rows: repeat(auto-fill, minmax(50px, auto));
   align-items: center;
 
+  @include respond(mobileM) {
+    gap: 10px;
+  }
+
   @include respond(desktop) {
     // grid-template-rows: repeat(auto-fill, minmax(120px, auto)); // Больше места для строк
     gap: 20px; // Добавляем промежутки между строками

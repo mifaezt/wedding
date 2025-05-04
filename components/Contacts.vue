@@ -79,6 +79,12 @@
 		padding: 10px 10px;
 	}
 
+	@include respond(mobile) {
+		font-size: 18px;
+		padding: 10px 10px;
+		border-radius: 15px;
+	}
+
 	@include respond(tablet) {
 		font-size: 25px;
 		padding: 20px 20px;

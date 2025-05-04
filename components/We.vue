@@ -30,7 +30,7 @@
 		/>
 
 		<p :class="$style.letter">
-			Дорогие родные и друзья <br />
+			Дорогие родные и друзья! <br />
 			Приглашаем вас на нашу свадьбу! <br />
 			Мы хотим разделить этот важный день нашей жизни с вами -<br />
 			самыми близкими и родными людьми.
@@ -169,7 +169,7 @@ export default {
 
 	
 	@include respond(desktop) {
-		top: 0;
+		top: 90px;
 	}
 
 
@@ -189,10 +189,11 @@ export default {
 }
 
 .letter {
-	padding: 10px 20px;
+	padding: 10px 10px;
 	text-align: center;
 	background-color: $container-color;
 	border-radius: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.527);
 
 	@include respond(desktop) {
 		max-width: 50%;
@@ -273,6 +274,7 @@ export default {
 	@include respond(mobile) {
 		width: 25%;
 		left: -5%;
+		top: 14%;
 	}
 
 	@include respond(tablet) {
@@ -296,6 +298,7 @@ export default {
 	@include respond(mobile) {
 		width: 25%;
 		right: -5%;
+		top: 14%;
 	}
 
 	@include respond(tablet) {

@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.dressContainer">
 		<div :class="$style.dressContent">
-			<h2 :class="$style.dressTitle">Дресскод</h2>
+			<h2 :class="$style.dressTitle">Дресс-код</h2>
 			<p :class="$style.dressMessage">
 				Мы не хотим вас ограничивать в выборе наряда, но будем рады, если это
 				будут спокойные пастельные тона.
