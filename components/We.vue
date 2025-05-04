@@ -169,7 +169,7 @@ export default {
 
 	
 	@include respond(desktop) {
-		top: 90px;
+		top: 70px;
 	}
 
 
