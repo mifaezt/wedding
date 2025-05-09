@@ -6,6 +6,7 @@
 		<Program />
 		<Dress />
 		<Moments />
+		<Form />
 		<Contacts />
 		<End />
 	</div>
