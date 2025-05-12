@@ -6,10 +6,10 @@ export default defineEventHandler(async (event) => {
   );
 
   const db = await mysql.createConnection({
-    host: "localhost",
+    host: "localhost:3306",
     user: "igor_admin",
     password: "1777177zZ$",
-    database: "igor_wedding_rsvp",
+    database: "igor_wedding",
   });
 
   await db.execute(
