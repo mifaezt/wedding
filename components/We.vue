@@ -2,7 +2,7 @@
 	<div :class="$style.weMain" ref="weMain">
 		<h1 :class="$style.mainTitle">Wedding day</h1>
 		<div :class="$style.imgContainer">
-			<NuxtImg :class="$style.weImg" src="We.jpg" />
+			<NuxtImg :class="$style.weImg" src="/_nuxt/We.jpg" />
 		</div>
 		<NuxtImg
 			:class="$style.imgMainPlants"
