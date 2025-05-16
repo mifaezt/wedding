@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/image"],
   image: {
-    dir: "assets/images", // Указывает на папку с изображениями
+    dir: "public/images",
+    domains: ["wedding.mifaezt.ru"],
+    provider: "static",
   },
   // Глобальные стили
   css: ["@/assets/scss/main.scss"],

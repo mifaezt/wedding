@@ -6,12 +6,12 @@
 		</div>
 		<NuxtImg
 			:class="$style.imgMainPlants"
-			src="eucalyptusOrig.png"
+			src="/images/eucalyptusOrig.png"
 			:style="mainPlantsStyle"
 		/>
 		<NuxtImg
 			:class="$style.imgMainPlantsRight"
-			src="eucalyptusOrig.png"
+			src="/images/eucalyptusOrig.png"
 			:style="mainPlantsRightStyle"
 		/>
 		<div :class="$style.mainInfoTitle">
