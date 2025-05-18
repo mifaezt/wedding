@@ -20,12 +20,12 @@
 		</div>
 		<NuxtImg
 			:class="$style.imgSecondPlants"
-			src="eucalyptusSecond.png"
+			src="/images/eucalyptusSecond.png"
 			:style="secondPlantsStyle"
 		/>
 		<NuxtImg
 			:class="$style.imgSecondPlantsRight"
-			src="eucalyptusSecond.png"
+			src="/images/eucalyptusSecond.png"
 			:style="secondPlantsRightStyle"
 		/>
 
@@ -35,7 +35,7 @@
 			Мы хотим разделить этот важный день нашей жизни с вами -<br />
 			самыми близкими и родными людьми.
 		</p>
-		<NuxtImg :class="$style.ornamentCenter" src="infitity.svg" />
+		<NuxtImg :class="$style.ornamentCenter" src="/images/infitity.svg" />
 	</div>
 </template>
 

@@ -9,7 +9,7 @@
 		</div>
 		<NuxtImg
 			:class="$style.drawingDress"
-			src="colorEucal.png"
+			src="/images/colorEucal.png"
 			alt="Декоративный элемент"
 			loading="lazy"
 			:style="drawingDressStyle"

@@ -12,7 +12,7 @@
       </p>
       <NuxtImg 
           :class="$style.drawingLeft" 
-          src="lineDrawing.png" 
+          src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
           loading="lazy"
         />
@@ -23,7 +23,7 @@
       </p>
       <NuxtImg 
           :class="$style.drawingRight" 
-          src="lineDrawing.png" 
+          src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
           loading="lazy"
         />
@@ -34,7 +34,7 @@
       </p>
       <NuxtImg 
           :class="$style.drawingLeftSecond" 
-          src="lineDrawing.png" 
+          src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
           loading="lazy"
         />

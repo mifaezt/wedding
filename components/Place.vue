@@ -6,7 +6,7 @@
                 <div :class="$style.logoWrapper">
                     <NuxtImg 
                         :class="$style.logo" 
-                        src="karjalaLogoWhite.png" 
+                        src="/images/karjalaLogoWhite.png" 
                         alt="Логотип Karjala Park"
                         loading="lazy"
                     />
@@ -15,7 +15,7 @@
                 <div :class="$style.imageWrapper">
                     <NuxtImg 
                         :class="$style.karjala" 
-                        src="KarjalaPark.jpg" 
+                        src="/images/KarjalaPark.jpg" 
                         alt="Фото Karjala Park"
                         loading="lazy"
                     />
@@ -34,14 +34,14 @@
             </div>
             <NuxtImg 
           :class="$style.drawingLeft" 
-          src="lineDrawing.png" 
+          src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
           loading="lazy"
           :style="drawingLeftStyle"
         />
         <NuxtImg 
           :class="$style.drawingRight" 
-          src="lineDrawing.png" 
+          src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
           loading="lazy"
           :style="drawingRightStyle"

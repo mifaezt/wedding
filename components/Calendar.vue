@@ -4,7 +4,7 @@
       <div :class="$style.calendarImageWrapper">
         <NuxtImg 
           :class="$style.calendar" 
-          src="calendar.svg" 
+          src="/images/calendar.svg" 
           alt="Дата свадьбы"
           loading="lazy"
         />

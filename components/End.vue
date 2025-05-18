@@ -2,7 +2,7 @@
   <div ref="container" :class="$style.container">
     <NuxtImg
       :class="$style.flowerTop"
-      src="/lineDrawing2.svg"
+      src="/images/lineDrawing2.svg"
       alt="Декоративный элемент"
       loading="lazy"
       :style="flowerTopStyle"
@@ -15,7 +15,7 @@
 
     <NuxtImg
       :class="$style.flowerBottom"
-      src="/lineDrawing2.svg"
+      src="/images/lineDrawing2.svg"
       alt="Декоративный элемент"
       loading="lazy"
       :style="flowerBottomStyle"
