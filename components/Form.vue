@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.formContainer">
     <h2 :class="$style.titleForm">Анкета</h2>
-    <h4 :class="$style.titleConfirmed">Пожалуйста, <b>подтвердите</b> свое присутствие:</h4>
+    <h4 :class="$style.titleConfirmed">Пожалуйста, <b>подтвердите</b> свое присутствие до 1 июля:</h4>
     <form @submit.prevent="submitRSVP">
       <!-- Основной гость -->
       <input :class="$style.mainInput" v-model="form.mainGuest" placeholder="Ваши ФИО" required>

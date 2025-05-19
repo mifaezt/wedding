@@ -8,7 +8,7 @@
     </div>
     <div :class="$style.momentsMomentRight">
       <h2 :class="$style.momentNum">02</h2>
-      <p :class="$style.momentMessage">Мы не расстроимся, если вы будете без букета цветов!
+      <p :class="$style.momentMessage">Чтобы руки были свободны для крепких обьятий, просим вас восдержаться от букетов!
       </p>
       <NuxtImg 
           :class="$style.drawingLeft" 

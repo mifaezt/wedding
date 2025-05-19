@@ -8,13 +8,10 @@
 
 		<NuxtLink
 			:class="$style.button"
-			to="https://memepedia.ru/wp-content/uploads/2018/08/8ed.jpg"
+			to="https://t.me/+D387DuqI-2s3YTYy"
 			aria-label="Чат свадьбы"
 		>
 			<span>Чат свадьбы</span>
-			<!-- <svg :class="$style.arrowIcon" viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg> -->
 		</NuxtLink>
 	</div>
 </template>
@@ -63,7 +60,7 @@
 	color: $text-color;
 	font-size: 20px;
 	font-family: Comfortaa;
-	font-weight: 300; // Легкий для основного текста
+	font-weight: 300;
 	text-decoration: none;
 	transition: all 0.3s ease;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
