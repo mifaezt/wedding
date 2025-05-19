@@ -15,7 +15,7 @@
 
     <NuxtImg
       :class="$style.flowerBottom"
-      src="/images/lineDrawingEnd.svg"
+      src="/images/infitity.svg"
       alt="Декоративный элемент"
       loading="lazy"
       :style="flowerBottomStyle"

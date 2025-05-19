@@ -81,16 +81,18 @@ const resetForm = () => {
 
 <style module lang="scss">
 .formContainer {
-  margin: 10px auto;
+  margin: 10px 10px;
   padding: 20px;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.531);
   border-radius: 8px;
   max-width: 100%;
   box-sizing: border-box;
+  background-color: $container-color;
   
   @include respond(tablet) {
     padding: 30px;
+    margin: 10px auto;
     max-width: 80%;
   }
   
