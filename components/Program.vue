@@ -15,6 +15,7 @@
       </div>
     </div>
   </div>
+     <p :class="$style.ps">Дорогие гости, могут быть небольшие корректировки в таймингах, самая актуальная информация будет в чате свадьбы, как и все подробности</p>
 </template>
 
 <script setup>
@@ -118,5 +119,10 @@ const items = [
   align-items: center; 
   height: 100%; 
 
+}
+
+.ps {
+  text-align: center;
+  font-size: 15px;
 }
 </style>

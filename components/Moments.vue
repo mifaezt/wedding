@@ -8,7 +8,7 @@
     </div>
     <div :class="$style.momentsMomentRight">
       <h2 :class="$style.momentNum">02</h2>
-      <p :class="$style.momentMessage">Чтобы руки были свободны для крепких обьятий, просим вас восдержаться от букетов!
+      <p :class="$style.momentMessage">Мы не расстроимся, если вы будете без букета цветов!
       </p>
       <NuxtImg 
           :class="$style.drawingLeft" 
@@ -28,7 +28,7 @@
           loading="lazy"
         />
     </div>
-    <div :class="$style.momentsMomentRight">
+    <!-- <div :class="$style.momentsMomentRight">
       <h2 :class="$style.momentNum">04</h2>
       <p :class="$style.momentMessage">Что то тут бы написать наверное
       </p>
@@ -38,7 +38,7 @@
           alt="Декоративный элемент"
           loading="lazy"
         />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -58,7 +58,7 @@
 }
 
 .momentsTitle {
-  text-align: end;
+  text-align: center;
   line-height: 110%;
 
 }
