@@ -60,7 +60,7 @@ const items = [
 
   @include respond(desktop) {
     // grid-template-rows: repeat(auto-fill, minmax(120px, auto)); // Больше места для строк
-    gap: 20px; // Добавляем промежутки между строками
+    gap: 20px; // промежутки между строками
   }
 }
 
@@ -70,8 +70,8 @@ const items = [
   align-items: center;
 
   @include respond(desktop) {
-    // min-height: 120px; // Увеличиваем высоту под большие шрифты
-    // padding-top: 20px; // Добавляем отступы сверху/снизу
+    // min-height: 120px; 
+    // padding-top: 20px; 
     // padding-bottom: 20px;
   }
 }
@@ -98,17 +98,15 @@ const items = [
   }
 
   @include respond(desktop) {
-    margin: 0; // Убираем отступы, чтобы разделитель был во всю высоту
+    margin: 0; 
     height: 100%;
   }
-
-
 }
 
 .programTime {
   line-height: 1.3;
   display: flex;
-  align-items: center; /* Добавили для вертикального выравнивания */
+  align-items: center;
   height: 100%;
 
 }
@@ -122,7 +120,12 @@ const items = [
 }
 
 .ps {
+  max-width: 600px;
   text-align: center;
   font-size: 15px;
+
+	@include respond(desktop) {
+      font-size: 20px;
+	}
 }
 </style>
