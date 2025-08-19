@@ -2,15 +2,20 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  
+  ssr: false,
+  nitro: {
+    prerender: {
+      routes: ["/"], // Рендерит главную страницу в HTML
+    },
+  },
   // Добавляем настройки сервера
   devServer: {
     port: 3001, // Меняем порт на 3001
-    host: '0.0.0.0' // Разрешаем доступ снаружи
+    host: "0.0.0.0", // Разрешаем доступ снаружи
   },
 
   modules: ["@nuxt/image"],
-  
+
   // Исправляем настройки изображений
   image: {
     dir: "public/images",
@@ -19,9 +24,9 @@ export default defineNuxtConfig({
     ipx: {
       modifiers: {
         quality: 80,
-        format: ['webp', 'jpg', 'svg']
-      }
-    }
+        format: ["webp", "jpg", "svg"],
+      },
+    },
   },
 
   // Глобальные стили
@@ -46,7 +51,7 @@ export default defineNuxtConfig({
   // Добавляем runtime конфиг
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL || 'http://localhost:3001'
-    }
-  }
+      baseURL: process.env.BASE_URL || "http://localhost:3001",
+    },
+  },
 });
