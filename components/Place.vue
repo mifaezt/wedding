@@ -4,7 +4,7 @@
             <div :class="$style.contentWrapper">
                 <h2 :class="$style.title">Место торжества</h2>
                 <div :class="$style.logoWrapper">
-                    <NuxtImg 
+                    <img 
                         :class="$style.logo" 
                         src="/images/karjalaLogoWhite.png" 
                         alt="Логотип Karjala Park"
@@ -13,7 +13,7 @@
                 </div>
                 <p :class="$style.address">п. Матросы, местность Сойважпорог, д. 3</p>
                 <div :class="$style.imageWrapper">
-                    <NuxtImg 
+                    <img 
                         :class="$style.karjala" 
                         src="/images/KarjalaPark.jpg" 
                         alt="Фото Karjala Park"
@@ -32,14 +32,14 @@
                     </svg> -->
                 </NuxtLink>
             </div>
-            <NuxtImg 
+            <img 
           :class="$style.drawingLeft" 
           src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
           loading="lazy"
           :style="drawingLeftStyle"
         />
-        <NuxtImg 
+        <img 
           :class="$style.drawingRight" 
           src="/images/lineDrawing.png" 
           alt="Декоративный элемент"

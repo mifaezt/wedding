@@ -1,6 +1,6 @@
 <template>
   <div ref="container" :class="$style.container">
-    <NuxtImg
+    <img
       :class="$style.flowerTop"
       src="/images/lineDrawingEnd.png"
       alt="Декоративный элемент"
@@ -13,7 +13,7 @@
       <p>С любовью, Игорь и Анастасия.</p>
     </div>
 
-    <NuxtImg
+    <img
       :class="$style.flowerBottom"
       src="/images/lineDrawingEnd.png"
       alt="Декоративный элемент"

@@ -7,7 +7,7 @@
 				будут спокойные пастельные тона.
 			</p>
 		</div>
-		<NuxtImg
+		<img
 			:class="$style.drawingDress"
 			src="/images/colorEucal.png"
 			alt="Декоративный элемент"

@@ -1,38 +1,36 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   ssr: false,
   nitro: {
     prerender: {
-      routes: ["/"], // Рендерит главную страницу в HTML
+      routes: ["/"],
     },
   },
-  // Добавляем настройки сервера
+
   devServer: {
-    port: 3001, // Меняем порт на 3001
-    host: "0.0.0.0", // Разрешаем доступ снаружи
+    port: 3001,
+    host: "0.0.0.0",
   },
 
   modules: ["@nuxt/image"],
 
-  // Исправляем настройки изображений
   image: {
-    dir: "public/images",
-    domains: ["wedding.mifaezt.ru"],
-    provider: "ipx", // Меняем static на ipx
+    dir: "public/images", // Путь относительно корня проекта
+    domains: ["127.1.0.0:3001"],
+    provider: "ipx",
+    // Перенесём formats на верхний уровень
+    formats: ["webp", "jpeg", "png", "svg"], // Указываем поддерживаемые форматы
     ipx: {
       modifiers: {
         quality: 80,
-        format: ["webp", "jpg", "svg"],
+        // format: 'webp' // Можно указать конкретный формат, если нужно
       },
     },
   },
 
-  // Глобальные стили
   css: ["@/assets/scss/main.scss"],
 
-  // Настройка SCSS через Vite
   vite: {
     css: {
       preprocessorOptions: {
@@ -48,7 +46,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // Добавляем runtime конфиг
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL || "http://localhost:3001",

@@ -10,7 +10,7 @@
       <h2 :class="$style.momentNum">02</h2>
       <p :class="$style.momentMessage">Мы не расстроимся, если вы будете без букета цветов!
       </p>
-      <NuxtImg 
+      <img 
           :class="$style.drawingLeft" 
           src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
@@ -21,7 +21,7 @@
       <h2 :class="$style.momentNum">03</h2>
       <p :class="$style.momentMessage">Мы будем рады любому подарку, не важно, в какой конверт вы его положите 😉
       </p>
-      <NuxtImg 
+      <img 
           :class="$style.drawingRight" 
           src="/images/lineDrawing.png" 
           alt="Декоративный элемент"
@@ -32,7 +32,7 @@
       <h2 :class="$style.momentNum">04</h2>
       <p :class="$style.momentMessage">Что то тут бы написать наверное
       </p>
-      <NuxtImg 
+      <img 
           :class="$style.drawingLeftSecond" 
           src="/images/lineDrawing.png" 
           alt="Декоративный элемент"

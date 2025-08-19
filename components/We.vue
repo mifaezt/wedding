@@ -2,14 +2,14 @@
 	<div :class="$style.weMain" ref="weMain">
 		<h1 :class="$style.mainTitle">Wedding day</h1>
 		<div :class="$style.imgContainer">
-			<NuxtImg :class="$style.weImg" src="/images/We.jpg" />
+			<img :class="$style.weImg" src="/images/We.jpg" />
 		</div>
-		<NuxtImg
+		<img
 			:class="$style.imgMainPlants"
 			src="/images/eucalyptusOrig.png"
 			:style="mainPlantsStyle"
 		/>
-		<NuxtImg
+		<img
 			:class="$style.imgMainPlantsRight"
 			src="/images/eucalyptusOrig.png"
 			:style="mainPlantsRightStyle"
@@ -18,12 +18,12 @@
 			<h2 :class="$style.names">Игорь и Анастасия</h2>
 			<h3 :class="$style.date">25 / 07 / 2025</h3>
 		</div>
-		<NuxtImg
+		<img
 			:class="$style.imgSecondPlants"
 			src="/images/eucalyptusSecond.png"
 			:style="secondPlantsStyle"
 		/>
-		<NuxtImg
+		<img
 			:class="$style.imgSecondPlantsRight"
 			src="/images/eucalyptusSecond.png"
 			:style="secondPlantsRightStyle"
@@ -35,7 +35,7 @@
 			Мы хотим разделить этот важный день нашей жизни с вами -<br />
 			самыми близкими и родными людьми.
 		</p>
-		<NuxtImg :class="$style.ornamentCenter" src="/images/infitity.svg" />
+		<img :class="$style.ornamentCenter" src="/images/infitity.svg" />
 	</div>
 </template>
 

@@ -2,7 +2,7 @@
   <div :class="$style.calendarWrapper">
     <div :class="$style.calendarContainer">
       <div :class="$style.calendarImageWrapper">
-        <NuxtImg 
+        <img 
           :class="$style.calendar" 
           src="/images/calendar.svg" 
           alt="Дата свадьбы"
