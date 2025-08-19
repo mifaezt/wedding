@@ -8,7 +8,7 @@
 
 		<NuxtLink
 			:class="$style.button"
-			to="https://t.me/+D387DuqI-2s3YTYy"
+			to="https://img02.rl0.ru/afisha/e1500x1000i/daily.afisha.ru/uploads/images/5/f6/5f69db3ed5c07c016af0dd0267606303.png"
 			aria-label="Чат свадьбы"
 		>
 			<span>Чат свадьбы</span>
